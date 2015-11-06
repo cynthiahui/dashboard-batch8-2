@@ -2,7 +2,7 @@ app.factory("GetImageService", function($http) {
     // var deferred = $q.defer();
 
     return {
-        getImage: function(scope) {
+        getImages: function(scope) {
             $http({
                 method: 'GET',
                 url: 'http://localhost:3000/api/work',
@@ -11,7 +11,7 @@ app.factory("GetImageService", function($http) {
                 // scope.visible = false;
                 console.log(success);
                 scope.$emit('getImage', {
-                    image:success.data.work
+                    image:success.data.works
                 });
             }, function errorCallback(error) {
             });

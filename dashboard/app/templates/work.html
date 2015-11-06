@@ -37,7 +37,7 @@
 			<th>Remove</th>
 		</thead>
 		<tbody>
-			<tr ng-repeat="image in images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
+			<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
 				<!-- <td ng-bind='image.id'></td> -->
 				<td ng-bind='image.title'></td>
 				<td ng-bind='image.author'></td>
@@ -49,11 +49,10 @@
 			</tr>
 		</tbody>
 	</table>
-	<!-- <div ng-controller="LoginCtrl"> -->
 		
-	</div>
+	
 	<div id="image_display">
-		<div class="col-lg-4"  ng-repeat="image in images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
+		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
 			<div class="image_display">
 				<div><img ng-src={{image.image}} class="image"></img></div>
 				<!-- <td ng-bind='image.id'></td> -->
@@ -65,5 +64,6 @@
 				<a ng-click='removeImage($index)'>Delete</a></div>
 			</div>
 		</div>
+	</div>
 	</div>
 </div>

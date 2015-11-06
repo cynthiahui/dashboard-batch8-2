@@ -25,17 +25,16 @@
 // ]);
 
 app.controller("ImageController", ['$scope', 'GetImageService', 
-    function($scope, getImageServic) {
+    function($scope, getImageService) {
 
-        $scope.loadPage = function() {
+       
 		console.log("page");
-		getImageService.getImages();
-		$scope.$on("getImage", function(event, image) {
-			console.log(image);
+		getImageService.getImages($scope);
+		$scope.$on("getImage", function(event, images) {
+			console.log(images);
+			$scope.display_images = images.image;
             });
-        }
-
-        
+      
     }
 ]);
 
