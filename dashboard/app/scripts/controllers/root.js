@@ -11,6 +11,9 @@ app.controller("logoutCtrl", ['$scope', '$location',
 
 		$scope.logout = function(){
 			$location.path('/login');
+			$('body').addClass('login-body');
+
+
 		};
 
 		
