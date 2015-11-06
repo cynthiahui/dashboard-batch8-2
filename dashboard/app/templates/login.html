@@ -1,20 +1,17 @@
-
-<!-- <div> -->
-    <form class="login-container" ng-controller="LoginCtrl" ng-submit="login()">
-        <div class="login-label">
-            Login
-        </div>
-        <div class="error-div" ng-show="visible">
-            <span class="login-error">{{errorMsg}}</span>
-        </div>
-        <div>
-            <input class="login-input" type="input" placeholder="Username" ng-model="userName" required >
-        </div>
-        <div>
-            <input class="login-input" type="input" placeholder="Password" ng-model="password" required >
-        </div>
-        <div>
-            <input class="login-input" ng-disabled="form.$invalid" type="submit" value="Login">
-        </div>
-    </form>
- <!-- </div> -->
+<form class="login-container " ng-controller="LoginCtrl" ng-submit="login()" class="login-body">
+    <div class="login-label">
+        Login
+    </div>
+    <div class="error-div" ng-show="visible">
+        <span class="login-error">{{errorMsg}}</span>
+    </div>
+    <div>
+        <input class="login-input" type="input" placeholder="Username" ng-model="userName" required>
+    </div>
+    <div>
+        <input class="login-input" type="password" placeholder="Password" ng-model="password" required>
+    </div>
+    <div>
+        <input class="login-input" ng-disabled="form.$invalid" type="submit" value="Login">
+    </div>
+</form>
