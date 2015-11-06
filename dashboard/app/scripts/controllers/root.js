@@ -13,7 +13,6 @@ app.controller("logoutCtrl", ['$scope', '$location',
 			$location.path('/login');
 			$('body').addClass('login-body');
 
-
 		};
 
 		

@@ -16,7 +16,7 @@ app.controller("LoginCtrl", ['$scope', '$location', 'LoginService', 'GetUserServ
             });
             $scope.$on("getUser", function(event, user) {
                 setUser($scope, user);
-                $location.path("/root");
+                $location.path("/root/work");
                 $('body').removeClass('login-body');
             });
         }

@@ -6,22 +6,31 @@ var app = angular.module('myApp', ['ui.router', 'ngCookies'])
             .state('login', {
                 url: '/',
                 templateUrl: '../templates/login.html'
-            }).state('root', {
+            })
+
+            .state('root', {
                 url: '/root',
                 templateUrl: '../templates/root.html'
-            }).state('root.overview', {
+            })
+
+            .state('root.overview', {
                 url: '/overview',
                 templateUrl: '../templates/overview.html'
-            }).state('root.work', {
+            })
+
+            .state('root.work', {
                 url: '/work',
                 templateUrl: '../templates/work.html'
-            }).state('root.producer', {
+            })
+
+            .state('root.producer', {
                 url: '/producer',
                 templateUrl: '../templates/producer.html'
-            }).state('root.contact', {
+            })
+
+            .state('root.contact', {
                 url: '/contact',
                 templateUrl: '../templates/contact.html'
             });
-        $urlRouterProvider.otherwise("/");
     });
 
