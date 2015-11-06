@@ -1,1 +1,69 @@
-work work work work work work work
+<div ng-controller='ImageController'>
+	<h5><a href="">Dashboard</a></h5>
+	<div class='container-fluid'>
+			<form class='form-inline'>
+				<div class="form-group">
+					<div class="col-sm-12">
+						<input type="text" placeholder='Title' class="form-control" name="title" ng-model='new_image.title'>
+						<input type="text" placeholder='Author' class="form-control" name="author" ng-model='new_image.author'>
+						<input type="text" placeholder='Like' class="form-control" name="like" ng-model='new_image.like'>
+						<input type="text" placeholder='Comment' class="form-control" name="comment" ng-model='new_image.comment'>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary" ng-click='addImage()'>submit</button>
+				<button type="submit" class="btn btn-primary" ng-click='cancelImage()'>cancel</button>
+			</form>
+		<h3 ng-show="errors() == true" class='error'>Image already exists!</h3>
+	</div>
+	<div class="col-sm-2" id='name_search'>
+		<input type='text' class='form-control' placeholder='Name' ng-model="filter_name">
+	</div>
+	<div class="col-sm-2" id='author_search'>
+		<input type='text' class='form-control' placeholder='Author' ng-model="filter_author">
+	</div>
+	<div class="col-sm-2" id='like_search'>
+		<input type='text' class='form-control' placeholder='Like' ng-model="filter_like">
+	</div>
+	<div class="col-sm-2" id='comment_search'>
+		<input type='text' class='form-control' placeholder='Comment' ng-model="filter_comment">
+	</div>
+	<table class='table table-hover'>
+		<thead>
+			<th>Name</th>
+			<th>Author</th>
+			<th>Like</th>
+			<th>Comment</th>
+			<th>Modify</th>
+			<th>Remove</th>
+		</thead>
+		<tbody>
+			<tr ng-repeat="image in images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
+				<!-- <td ng-bind='image.id'></td> -->
+				<td ng-bind='image.title'></td>
+				<td ng-bind='image.author'></td>
+				<td ng-bind='image.like'></td>
+				<td ng-bind='image.comment'></td>
+				<!-- <td ng-bind='image.image'></td> -->
+				<td><a ng-click='editImage($index)'>Edit</a></td>
+				<td><a ng-click='removeImage($index)'>Delete</a></td>
+			</tr>
+		</tbody>
+	</table>
+	<!-- <div ng-controller="LoginCtrl"> -->
+		
+	</div>
+	<div id="image_display">
+		<div class="col-lg-4"  ng-repeat="image in images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
+			<div class="image_display">
+				<div><img ng-src={{image.image}} class="image"></img></div>
+				<!-- <td ng-bind='image.id'></td> -->
+				<strong><div ng-bind='image.title'></div></strong>
+				<div style="color:green"><div ng-bind='image.author'></div></div>
+				<div ng-bind='image.like'></div>
+				<div ng-bind='image.comment'></div>
+				<div style="color:blue; float:right;"><a ng-click='editImage($index)'>Edit |</a>
+				<a ng-click='removeImage($index)'>Delete</a></div>
+			</div>
+		</div>
+	</div>
+</div>
