@@ -10,7 +10,9 @@ app.controller("logoutCtrl", ['$scope', '$location',
 		
 
 		$scope.logout = function(){
-			$location.path('/login');
+			$location.path('/');
+			removeUser($scope);
+            $('body').addClass('login-body');
 		};
 
 		

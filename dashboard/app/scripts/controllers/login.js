@@ -25,12 +25,13 @@ app.controller("LoginCtrl", ['$scope', '$location', 'LoginService', 'GetUserServ
 
 function setUser(scope, user) {
     scope.WriteCookie(user);
+    scope.user=user;
 }
 
 function getUser(scope, user) {
     return scope.ReadCookie(user);
 }
 
-function removeUser(scope, user) {
-    scope.RemoveCookie(user);
+function removeUser(scope) {
+    scope.RemoveCookie(scope.user);
 }

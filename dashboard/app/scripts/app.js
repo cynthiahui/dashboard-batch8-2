@@ -24,4 +24,3 @@ var app = angular.module('myApp', ['ui.router', 'ngCookies'])
             });
         $urlRouterProvider.otherwise("/");
     });
->>>>>>> cd083e483f1cedbcd7271a23401fe6d9f0529f9d
