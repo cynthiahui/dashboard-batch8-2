@@ -2,7 +2,7 @@ var app = angular.module('myApp', ['ui.router', 'ngCookies'])
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
-            .state('/', {
+            .state('login', {
                 url: '/',
                 templateUrl: '../templates/login.html'
             }).state('root', {
