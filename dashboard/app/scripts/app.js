@@ -5,10 +5,10 @@
       $stateProvider
       .state('login', {
           url: '/login',
-          templateUrl: 'templates/login.html'
+          templateUrl: '../templates/login.html'
       }).state('root', {
           url: '/root',
-          templateUrl: 'templates/root.html'
+          templateUrl: '../templates/root.html'
       })
 
       .state('overview',{
@@ -17,7 +17,7 @@
 			})
 
 		.state('work',{
-				url:'/work',
+				url:'/',
 				templateUrl:'../templates/work.html'
 			})
 
@@ -41,7 +41,7 @@
           // if ($rootScope.loggedInUser == null) {
           // no logged user, redirect to /login
           // if (next.templateUrl === "partials/root.html") {} else {
-          $location.path("/root");
+          $location.path("root");
           console.log($location);
           // }
       });

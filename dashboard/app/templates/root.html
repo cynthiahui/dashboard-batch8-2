@@ -1,43 +1,26 @@
+<div id="root_header" ng-controller="logoutCtrl">
+    <div id="logo">
+        <img src="../assets/images/app/logo.png">
+    </div>
 
+    <div id="userinfo" >
+        <p> {{uname}} {{date | date:'MMM dd, y'}}</p>
+    </div>
 
-
-
-<div id="header">
-		<div id="logo">
-
-			<img src="">
-
-		</div>
-
-		<div id="userinfo">
-
-			<p>{{username + date}}</p>
-			
-		</div>
-
-		<div id="logout">
-
-			<button>logout</button>
-			
-		</div>
+    <div id="logout">
+        <button class="btn btn-default" ng-click="logout()" ><b>Log Out</b></button>
+    </div>
 </div>
-
 <div>
-	<div>
-		<ul>
-			<li><a ui-sref="overview">Overview</a></li>
-			<li><a ui-sref="work">Work</a></li>
-			<li><a ui-sref="producer">Producer</a></li>
-			<li><a ui-sref="contact">Contact</a></li>
-		</ul>
-	</div>
-
-	<div ui-view>
-
-	</div>
-
-	
-
+    <div id="root_siderbar">
+        <ul>
+            <li><a ui-sref="overview"><span class="glyphicon glyphicon-cloud"></span> Overview</a></li>
+            <li><a ui-sref="work"><span class="glyphicon glyphicon-tags"></span> Work</a></li>
+            <li><a ui-sref="producer"><span class="glyphicon glyphicon-tint"></span> Producer</a></li>
+            <li><a ui-sref="contact"><span class="glyphicon glyphicon-th-large"></span> Contact</a></li>
+        </ul>
+    </div>
+    <div id="root_content">
+        <div ui-view></div>
+    </div>
 </div>
-
-
