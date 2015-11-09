@@ -19,11 +19,14 @@
 .login-body {
     font-size: 20px;
     color: white;
-    background-image: url(../images/app/background.jpg);
+    background-image: url(../images/src/app/background.jpg);
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-position: center;
     background-size: cover;
+    position: fixed;
+    width: 100%; 
+    height: 100%;
 /*    transition: all 1s ease;
     -moz-transition: all 1s ease;
     -ms-transition: all 1s ease;
