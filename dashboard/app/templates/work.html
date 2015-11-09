@@ -1,6 +1,40 @@
-<div ng-controller='ImageController'>
+<div ng-controller='ImageController' id="work_page">
 	<h5><a href="">Dashboard</a></h5>
 	<div class='container-fluid'>
+			
+		<div id="add_item_btn">
+
+ 		<button class="btn btn-danger btn-lg" ng-click="Add_item()" >Add Item</button> 
+
+ 		</div>
+
+ 		<div ng-show="isVisible" id="work_add_item">
+
+		 	<div id="add_item_input">
+
+		 		<h2>Add Item</h2>
+
+		 		<div><input class="form-control input-lg" type="text" placeholder="Title" ng-model="add_item.title" /></div>
+
+		 		<div><input class="form-control input-lg" type="text" placeholder="Author" ng-model="add_item.author" /></div>
+
+		 		<div><input class="form-control input-lg" type="text" placeholder="Like" ng-model="add_item.like" /></div>
+
+		 		<div><input class="form-control input-lg" type="text" placeholder="Comment" ng-model="add_item.comment" /></div>
+
+		 		<div><button  id="add_item_submit" class="btn btn-success btn-lg" ng-click="Submit()">Submit</button></div>
+
+		 		<div><button id="add_item_cancel" class="btn btn-default btn-lg" ng-click="Cancel()">Cancel</button></div>
+
+
+				
+
+
+		 	</div>
+
+ 		</div>
+
+
 			<form class='form-inline'>
 				<div class="form-group">
 					<div class="col-sm-12">
@@ -14,7 +48,7 @@
 				<button type="submit" class="btn btn-primary" ng-click='cancelImage()'>cancel</button>
 			</form>
 		<h3 ng-show="errors() == true" class='error'>Image already exists!</h3>
-	</div>
+	<!-- </div>
 	<div class="col-sm-2" id='name_search'>
 		<input type='text' class='form-control' placeholder='Name' ng-model="filter_name">
 	</div>
@@ -26,7 +60,7 @@
 	</div>
 	<div class="col-sm-2" id='comment_search'>
 		<input type='text' class='form-control' placeholder='Comment' ng-model="filter_comment">
-	</div>
+	</div> -->
 	<table class='table table-hover'>
 		<thead>
 			<th>Name</th>

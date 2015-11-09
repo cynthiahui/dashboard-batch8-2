@@ -1,0 +1,39 @@
+
+
+#work_add_item {
+	position: fixed;
+	text-align: center;
+	width: 600px;
+	border-style: solid;
+    border-width: 2px;
+    border-radius:10px;
+    margin-left: 400px;
+    margin-top: 100px;
+    z-index : 1;
+    background-color: gray;
+
+
+}
+
+#add_item_btn {
+	float: left;
+	margin-left: 300px;
+
+}
+
+#add_item_input div {
+	margin: 15px;
+}
+
+#add_item_submit {
+	float: left;
+	margin: 10px;
+	margin-left: 20px;
+
+}
+
+#add_item_cancel {
+	float: left;
+	margin: 10px;
+	
+}

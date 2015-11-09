@@ -6,14 +6,10 @@ app.controller("logoutCtrl", ['$scope', '$location',
 		var updateDate = function(){
 			$scope.date = new Date();
 		};
-
-		
-
 		$scope.logout = function(){
 
 			$location.path('/login');
 			$('body').addClass('login-body');
-
 
 		};
 
