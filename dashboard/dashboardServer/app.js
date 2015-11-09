@@ -8,6 +8,9 @@ var routes       = require('./routes/index');
 var users        = require('./routes/users');
 var login        = require('./routes/login');
 var work         = require('./routes/work');
+var location     = require('./routes/location');
+var category     = require('./routes/category');
+var profile      = require('./routes/profile');
 var app          = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
@@ -25,6 +28,9 @@ app.use('/', routes);
 app.use('/api/getuser', users);
 app.use('/api/login', login);
 app.use('/api/work', work);
+app.use('/api/location', location);
+app.use('/api/category', category);
+app.use('/api/profile', profile);
 console.log('Dashboard server started....');
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

@@ -1,11 +1,9 @@
-app.controller("LoginCtrl", ['$scope', '$location', '$http', 'AuthService', 'UserService',
-    function($scope, $location, $http, authService, userService) {
+app.controller("LoginCtrl", ['$scope', '$location', 'AuthService', 'UserService',
+    function($scope, $location, authService, userService) {
         $scope.visible = false;
         $scope.errorMsg = '';
         $scope.userName = "darth";
         $scope.password = "jedi";
-        $('body').addClass('login-body');
-
         $scope.login = function() {
             var user = {
                 userName: $scope.userName,
@@ -30,7 +28,6 @@ app.controller("LoginCtrl", ['$scope', '$location', '$http', 'AuthService', 'Use
             };
             userService.getUser(user).then(function(result) {
                 authService.WriteCookie(result.data.name);
-                $('body').removeClass('login-body');
                 $location.path("/root/work");
             });
 
