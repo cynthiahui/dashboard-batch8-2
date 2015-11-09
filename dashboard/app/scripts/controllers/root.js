@@ -1,21 +1,21 @@
-app.controller("logoutCtrl", ['$scope', '$location', 
-	function($scope, $location){
-		
-		$scope.date = new Date();
+app.controller("logoutCtrl", ['$scope', '$location', 'AuthService',
+    function($scope, $location, authService) {
+        if (!authService.CheckAuth())
+            $location.path('/');
+        $scope.date = new Date();
 
-		var updateDate = function(){
-			$scope.date = new Date();
-		};
-		$scope.logout = function(){
-
-			$location.path('/login');
-			$('body').addClass('login-body');
-
-		};
-
-		
-	}]);
+        var updateDate = function() {
+            $scope.date = new Date();
+        };
 
 
 
 
+        $scope.logout = function() {
+            authService.RemoveCookie();
+            $location.path('/');
+        };
+
+
+    }
+]);

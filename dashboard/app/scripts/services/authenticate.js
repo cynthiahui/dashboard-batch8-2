@@ -1,29 +1,25 @@
-app.factory("LoginService", function($http) {
-    return {
-        login: function(scope, reqData) {
-            $http({
-                method: 'POST',
-                url: 'http://localhost:3000/api/login',
-                data: reqData
-                    // headers: {
-                    //     //     'Access-Control-Allow-Origin': 'http://localhost:9000',
-                    //     //     'Access-Control-Allow-Methods': 'POST, GET, OPTIONS, PUT',
-                    //     'Content-Type': 'application/json'
-                    //         //     'Accept': 'application/json'
-                    // }
-            }).then(function successCallback(success) {
-                scope.errorMsg = "";
-                scope.visible = false;
-                scope.$emit('login', {
-                    "query": {
-                        "user": reqData.userName
-                    }
-                });
-            }, function errorCallback(error) {
-                scope.errorMsg = "incorrect information, please try again";
-                scope.visible = true;
-            });
-            return "login";
+app.factory('AuthService', ['$rootScope', '$cookieStore',
+    function($rootScope, $cookieStore) {
+        return {
+            WriteCookie: function(user) {
+                $cookieStore.put("User", user);
+                $rootScope.user = user;
+            },
+            ReadCookie: function() {
+                return $cookieStore.get('User');
+            },
+            RemoveCookie: function() {
+                $cookieStore.remove('User');
+                $rootScope.user = undefined;
+            },
+            CheckAuth: function() {
+                if ($cookieStore.get('User') === "" || $cookieStore.get('User') === null || $cookieStore.get('User') === undefined) {
+                    return false;
+                }
+                $rootScope.user = $cookieStore.get('User');
+                return true;
+
+            }
         }
     }
-});
+]);

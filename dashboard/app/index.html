@@ -5,28 +5,38 @@
     <meta charset="utf-8">
     <title>Dashboard</title>
 
-    <link rel="stylesheet" type="text/css" href="../../bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="bower_components/bootstrap/dist/css/bootstrap.min.css">
     <link rel="stylesheet" type="text/css" href="../assets/styles/login.css">
     <link rel="stylesheet" type="text/css" href="../assets/styles/main.css">
     <link rel="stylesheet" type="text/css" href="../assets/styles/sidebar.css">
     <link rel="stylesheet" type="text/css" href="../assets/styles/work.css">
+    <link rel="stylesheet" type="text/css" href="../assets/styles/contact.css">
+
 </head>
 
-<body class="login-body">
-    <div ui-view  ng-controller="CookieStore">
+<body>
+    <div ui-view>
     </div>
-    <script type="text/javascript" src="../../bower_components/jquery/dist/jquery.min.js"></script>
-    <script type="text/javascript" src="../../bower_components/angular/angular.js"></script>
-    <script type="text/javascript" src="../../bower_components/angular-cookies/angular-cookies.js"></script>
-    <script type="text/javascript" src="../../bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script type="text/javascript" src="bower_components/jquery/dist/jquery.min.js"></script>
+    <script type="text/javascript" src="bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="bower_components/angular/angular.js"></script>
+    <script type="text/javascript" src="bower_components/angular-cookies/angular-cookies.js"></script>
+    <script type="text/javascript" src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <!-- 
+    <script type="text/javascript" src="bower_components/angular-bootstrap/ui-bootstrap-tpls.min.js"></script>
+     -->
+     <script type="text/javascript" src="bower_components/angular-ui-bootstrap/src/rating/rating.js"></script>
+    
+    <script type="text/javascript" src="bower_components/angular-animate/angular-animate.min.js"></script>
     <script type="text/javascript" src="../scripts/app.js"></script>
-    <script type="text/javascript" src="../scripts/controllers/producer.js"></script>
     <script type="text/javascript" src="../scripts/services/authenticate.js"></script>
     <script type="text/javascript" src="../scripts/controllers/login.js"></script>
     <script type="text/javascript" src="../scripts/services/getUser.js"></script>
+    <script type="text/javascript" src="../scripts/services/getImages.js"></script>
     <script type="text/javascript" src="../scripts/controllers/root.js"></script>
     <script type="text/javascript" src="../scripts/controllers/work.js"></script>
-    <script type="text/javascript" src="../scripts/services/getImages.js"></script>
+    <script type="text/javascript" src="../scripts/services/authenticate.js"></script>
+    <script type="text/javascript" src="../scripts/controllers/contact.js"></script>
 </body>
 
 </html>

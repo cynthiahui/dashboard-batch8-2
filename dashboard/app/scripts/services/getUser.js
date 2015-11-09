@@ -1,17 +1,31 @@
-app.factory("GetUserService", function($http) {
+app.factory("UserService", function($http, $q) {
     return {
-        getUser: function(scope, reqData) {
+        login: function(user) {
+            var deferred = $q.defer();
+            $http({
+                method: 'POST',
+                url: 'http://localhost:3000/api/login',
+                data: user
+            }).then(function(success) {
+                    deferred.resolve(success);
+                },
+                function(error) {
+                    deferred.reject(error);
+                });
+            return deferred.promise;
+        },
+        getUser: function(user) {
+            var deferred = $q.defer();
             $http({
                 method: 'GET',
                 url: 'http://localhost:3000/api/getuser',
-                data: reqData
-            }).then(function successCallback(success) {
-                scope.$emit('getUser', {
-                    user:success.data.name
-                });
-            }, function errorCallback(error) {
+                data: user
+            }).then(function(result) {
+                deferred.resolve(result);
+            }, function(error) {
+                deferred.reject(error);
             });
-            return "getUser";
+            return deferred.promise;
         }
     }
 });
