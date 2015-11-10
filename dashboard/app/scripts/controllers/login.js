@@ -2,8 +2,6 @@ app.controller("LoginCtrl", ['$scope', '$location', 'AuthService', 'UserService'
     function($scope, $location, authService, userService) {
         $scope.visible = false;
         $scope.errorMsg = '';
-        $scope.userName = "darth";
-        $scope.password = "jedi";
         $scope.login = function() {
             var user = {
                 userName: $scope.userName,
@@ -22,9 +20,7 @@ app.controller("LoginCtrl", ['$scope', '$location', 'AuthService', 'UserService'
 
         $scope.getUser = function() {
             var user = {
-                "query": {
-                    "user": $scope.userName
-                }
+                "user": $scope.userName
             };
             userService.getUser(user).then(function(result) {
                 authService.WriteCookie(result.data.name);
