@@ -93,6 +93,41 @@ app.controller("ImageController", ['$scope','$http',
 
 			$scope.isVisible = !$scope.isVisible;
 		};
+
+		$scope.isdeleteVisible = false;
+
+	  	var index; 
+ 		$scope.removeImage = function($index){
+ 				index = $index;
+				console.log($index);
+				$scope.isdeleteVisible = !$scope.isdeleteVisible;
+		   
+	     };
+	    $scope.Submit_delete = function(){
+		     	console.log(index);
+			  	$scope.display_images.splice(index, 1);
+			  	$scope.isdeleteVisible = !$scope.isdeleteVisible;
+ 	  		};
+
+ 	 	 // $scope.Submit_delete = function($index){
+		  	//  $scope.display_images.splice($index, 1);
+		  	//  $scope.isdeleteVisible = !$scope.isdeleteVisible;
+ 	  	// };
+
+		$scope.Cancel_delete = function () {
+
+			$scope.isdeleteVisible = !$scope.isdeleteVisible;
+		};
+
+	    $scope.editImage =function($index){
+	    	 // $scope.display_images.splice($index, 1);
+	    }
+
+	    $scope.myDropDown = 'list';
+
+
+
     }
+
 ]);
 

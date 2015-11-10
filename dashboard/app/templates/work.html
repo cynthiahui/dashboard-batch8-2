@@ -1,13 +1,23 @@
 <div ng-controller='ImageController' id="work_page">
-	<h5><a href="">Dashboard</a></h5>
+
 	<div class='container-fluid'>
-			
+	<div id="work_title">	
+	    <select ng-model="myDropDown" class="btn btn-info btn-lg" style="float:left">
+	          <option value="list">
+	          	Select design
+	          </option>
+	          <option value="list">
+	          	list
+	          </option>
+	          <option value="card">
+	          	card
+	          </option>
+	    </select>
 		<div id="add_item_btn">
 
  		<button class="btn btn-danger btn-lg" ng-click="Add_item()" >Add Item</button> 
-
+		
  		</div>
-
  		
 		<div ng-show="isVisible" id="add_item_body" >
 
@@ -34,9 +44,74 @@
 	 		</div>
 
  		</div>
+		
+		<div ng-show="isdeleteVisible">
+			<div id="work_delete_item">
+				<p>This will permanently delete the item from the table and action cannot be reverse.If you are sure, please confirm with the appropriate action</p>
+				
+				<button  id="delete_item_submit" class="btn btn-success btn-lg" ng-click="Submit_delete()">Yes,I am sure</button>
 
+				<button id="delete_item_cancel" class="btn btn-default btn-lg" ng-click="Cancel_delete()">Cancel</button>
+			</div>
+		</div>
+	
 
+	<div class="col-sm-2" id='name_search'>
+		<input type='text' class='form-control' placeholder='Name' ng-model="filter_name">
+	</div>
+	<div class="col-sm-2" id='author_search'>
+		<input type='text' class='form-control' placeholder='Author' ng-model="filter_author">
+	</div>
+	<div class="col-sm-2" id='like_search'>
+		<input type='text' class='form-control' placeholder='Like' ng-model="filter_like">
+	</div>
+	<div class="col-sm-2" id='comment_search'>
+		<input type='text' class='form-control' placeholder='Comment' ng-model="filter_comment">
+	</div>
+</div>
 
+	<div ng-show="myDropDown=='list'" >
+		<table class='table table-hover'>
+			<thead>
+				<th>Name</th>
+				<th>Author</th>
+				<th>Like</th>
+				<th>Comment</th>
+				<th>Modify</th>
+				<th>Remove</th>
+			</thead>
+			<tbody>
+				<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
+					<!-- <td ng-bind='image.id'></td> -->
+					<td ng-bind='image.title'></td>
+					<td ng-bind='image.author'></td>
+					<td ng-bind='image.like'></td>
+					<td ng-bind='image.comment'></td>
+					<!-- <td ng-bind='image.image'></td> -->
+					<td><a ng-click='editImage($index)'>Edit</a></td>
+					<td><a ng-click='removeImage($index)'>Delete</a></td>
+				</tr>
+			</tbody>
+		</table>
+	</div>	
+	
+
+	<div ng-show="myDropDown=='card'" style="float:left">
+		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
+			<div class="image_display">
+				<div class="image"><img ng-src={{image.image}} class="image"></img></div>
+				<!-- <td ng-bind='image.id'></td> -->
+				<strong><div ng-bind='image.title'></div></strong>
+				<div style="color:green"><div ng-bind='image.author'></div></div>
+				<div ng-bind='image.like'></div>
+				<div ng-bind='image.comment'></div>
+				<div style="color:blue; float:right;"><a ng-click='editImage($index)'>Edit |</a>
+				<a ng-click='removeImage($index)'>Delete</a></div>
+			</div>
+		</div>
+	</div>
+
+<!-- 
 			<form class='form-inline'>
 				<div class="form-group">
 					<div class="col-sm-12">
@@ -49,57 +124,7 @@
 				<button type="submit" class="btn btn-primary" ng-click='addImage()'>submit</button>
 				<button type="submit" class="btn btn-primary" ng-click='cancelImage()'>cancel</button>
 			</form>
-		<h3 ng-show="errors() == true" class='error'>Image already exists!</h3>
-	<!-- </div>
-	<div class="col-sm-2" id='name_search'>
-		<input type='text' class='form-control' placeholder='Name' ng-model="filter_name">
+		<h3 ng-show="errors() == true" class='error'>Image already exists!</h3> -->
 	</div>
-	<div class="col-sm-2" id='author_search'>
-		<input type='text' class='form-control' placeholder='Author' ng-model="filter_author">
-	</div>
-	<div class="col-sm-2" id='like_search'>
-		<input type='text' class='form-control' placeholder='Like' ng-model="filter_like">
-	</div>
-	<div class="col-sm-2" id='comment_search'>
-		<input type='text' class='form-control' placeholder='Comment' ng-model="filter_comment">
-	</div> -->
-	<table class='table table-hover'>
-		<thead>
-			<th>Name</th>
-			<th>Author</th>
-			<th>Like</th>
-			<th>Comment</th>
-			<th>Modify</th>
-			<th>Remove</th>
-		</thead>
-		<tbody>
-			<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
-				<!-- <td ng-bind='image.id'></td> -->
-				<td ng-bind='image.title'></td>
-				<td ng-bind='image.author'></td>
-				<td ng-bind='image.like'></td>
-				<td ng-bind='image.comment'></td>
-				<!-- <td ng-bind='image.image'></td> -->
-				<td><a ng-click='editImage($index)'>Edit</a></td>
-				<td><a ng-click='removeImage($index)'>Delete</a></td>
-			</tr>
-		</tbody>
-	</table>
-		
-	
-	<div id="image_display">
-		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
-			<div class="image_display">
-				<div><img ng-src={{image.image}} class="image"></img></div>
-				<!-- <td ng-bind='image.id'></td> -->
-				<strong><div ng-bind='image.title'></div></strong>
-				<div style="color:green"><div ng-bind='image.author'></div></div>
-				<div ng-bind='image.like'></div>
-				<div ng-bind='image.comment'></div>
-				<div style="color:blue; float:right;"><a ng-click='editImage($index)'>Edit |</a>
-				<a ng-click='removeImage($index)'>Delete</a></div>
-			</div>
-		</div>
-	</div>
-	</div>
+</div>
 </div>

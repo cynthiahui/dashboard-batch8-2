@@ -10,5 +10,6 @@ app.factory("GetImageService", function($http) {
                 });
             }, function errorCallback(error) {});
         }
+        // removeImage: function()
     }
 });
