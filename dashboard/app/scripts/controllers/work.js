@@ -93,6 +93,25 @@ app.controller("ImageController", ['$scope','$http',
 
 			$scope.isVisible = !$scope.isVisible;
 		};
+
+	    $scope.removeImage = function($index){
+	        $scope.display_images.splice($index, 1);
+	    };
+
+	    $scope.editImage =function($index){
+	    	 // $scope.display_images.splice($index, 1);
+	    }
+
+	    $scope.myDropDown = 'list';
+
     }
+
+ //    function Controller ($scope) {
+	// 	$scope.myDropDown = 'one';
+	// }
+
+
+
+
 ]);
 

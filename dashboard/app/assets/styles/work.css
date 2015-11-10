@@ -1,3 +1,6 @@
+#work_page{
+	float:left;
+}
 
 #work_add_item {
 	position: absolute;
@@ -33,4 +36,17 @@
 	float: left;
 	margin: 10px;
 	
+}
+
+.image_display{
+	border:2px solid black;
+	float:left;
+}
+.image{
+	width:100%;
+}
+
+#work_title{
+	display:inline-block;
+	border:1px solid black;
 }
