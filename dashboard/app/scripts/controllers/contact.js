@@ -92,7 +92,7 @@ app.controller("contactCtrl", ['$scope', '$http', function($scope, $http) {
 
     //send email
     $('#sendEmail').click(function() {
-        window.open('mailto:' + $scope.contact.email + '?subject=information&body=' + $("#content").text());
+        window.open('mailto:' + $scope.contact.email + '?subject=information&body=' + $("#info-content").text());
     });
 
 }]);

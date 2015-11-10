@@ -1,5 +1,5 @@
-<div ng-controller='ImageController' id="work_page">
-
+<div id="work_page" ng-controller='ImageController'>
+	
 	<div class='container-fluid'>
 	<div id="work_title">	
 	    <select ng-model="myDropDown" class="btn btn-info btn-lg" style="float:left">
@@ -13,62 +13,38 @@
 	          	card
 	          </option>
 	    </select>
+
 		<div id="add_item_btn">
 
- 		<button class="btn btn-danger btn-lg" ng-click="Add_item()" >Add Item</button> 
-		
- 		</div>
- 		
-		<div ng-show="isVisible" id="add_item_body" >
-
-	 		<div id="work_add_item">
-
-			 	<div id="add_item_input">
-
-			 		<h2>Add Item</h2>
-
-			 		<div><input class="form-control input-lg" type="text" placeholder="Title" ng-model="add_item.title" /></div>
-
-			 		<div><input class="form-control input-lg" type="text" placeholder="Author" ng-model="add_item.author" /></div>
-
-			 		<div><input class="form-control input-lg" type="text" placeholder="Like" ng-model="add_item.like" /></div>
-
-			 		<div><input class="form-control input-lg" type="text" placeholder="Comment" ng-model="add_item.comment" /></div>
-
-			 		<div><button  id="add_item_submit" class="btn btn-success btn-lg" ng-click="Submit()">Submit</button></div>
-
-			 		<div><button id="add_item_cancel" class="btn btn-default btn-lg" ng-click="Cancel()">Cancel</button></div>
-
-			 	</div>
-
-	 		</div>
+ 		<button class="btn btn-danger btn-lg" ng-click="add_item_btn()" >Add Item</button> 
 
  		</div>
+
+ 		<my-widget ng-show="isVisible"></my-widget> 
+ 		<!-- PLZ remember this must be the format like this my-widget for custom directive -->
+
+			<form class='form-inline'>
+				<div class="form-group">
+					<div class="col-sm-12">
+						<input type="text" placeholder='Title' class="form-control" name="title" ng-model='new_image.title'>
+						<input type="text" placeholder='Author' class="form-control" name="author" ng-model='new_image.author'>
+						<input type="text" placeholder='Like' class="form-control" name="like" ng-model='new_image.like'>
+						<input type="text" placeholder='Comment' class="form-control" name="comment" ng-model='new_image.comment'>
+					</div>
+				</div>
+				<button type="submit" class="btn btn-primary" ng-click='addImage()'>submit</button>
+				<button type="submit" class="btn btn-primary" ng-click='cancelImage()'>cancel</button>
+			</form>
+		<h3 ng-show="errors() == true" class='error'>Image already exists!</h3>
+
+
 		
-		<div ng-show="isdeleteVisible">
-			<div id="work_delete_item">
-				<p>This will permanently delete the item from the table and action cannot be reverse.If you are sure, please confirm with the appropriate action</p>
-				
-				<button  id="delete_item_submit" class="btn btn-success btn-lg" ng-click="Submit_delete()">Yes,I am sure</button>
+		<my-widget ng-if="editpage"></my-widget>
 
-				<button id="delete_item_cancel" class="btn btn-default btn-lg" ng-click="Cancel_delete()">Cancel</button>
-			</div>
-		</div>
-	
+<!-- 		<div id="image_display">
 
-	<div class="col-sm-2" id='name_search'>
-		<input type='text' class='form-control' placeholder='Name' ng-model="filter_name">
+		</div> -->
 	</div>
-	<div class="col-sm-2" id='author_search'>
-		<input type='text' class='form-control' placeholder='Author' ng-model="filter_author">
-	</div>
-	<div class="col-sm-2" id='like_search'>
-		<input type='text' class='form-control' placeholder='Like' ng-model="filter_like">
-	</div>
-	<div class="col-sm-2" id='comment_search'>
-		<input type='text' class='form-control' placeholder='Comment' ng-model="filter_comment">
-	</div>
-</div>
 
 	<div ng-show="myDropDown=='list'" >
 		<table class='table table-hover'>
@@ -88,7 +64,7 @@
 					<td ng-bind='image.like'></td>
 					<td ng-bind='image.comment'></td>
 					<!-- <td ng-bind='image.image'></td> -->
-					<td><a ng-click='editImage($index)'>Edit</a></td>
+					<td><a ng-click='editImage(image)'>Edit</a></td>
 					<td><a ng-click='removeImage($index)'>Delete</a></td>
 				</tr>
 			</tbody>
@@ -97,6 +73,7 @@
 	
 
 	<div ng-show="myDropDown=='card'" style="float:left">
+
 		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
 			<div class="image_display">
 				<div class="image"><img ng-src={{image.image}} class="image"></img></div>
@@ -105,26 +82,19 @@
 				<div style="color:green"><div ng-bind='image.author'></div></div>
 				<div ng-bind='image.like'></div>
 				<div ng-bind='image.comment'></div>
-				<div style="color:blue; float:right;"><a ng-click='editImage($index)'>Edit |</a>
-				<a ng-click='removeImage($index)'>Delete</a></div>
+
+				<div style="color:blue; float:right;">
+
+				<a ng-click='editImage(image)'>Edit</a>
+
+				<a ng-click='removeImage($index)'>Delete</a>
+				</div>
+
 			</div>
 		</div>
 	</div>
 
-<!-- 
-			<form class='form-inline'>
-				<div class="form-group">
-					<div class="col-sm-12">
-						<input type="text" placeholder='Title' class="form-control" name="title" ng-model='new_image.title'>
-						<input type="text" placeholder='Author' class="form-control" name="author" ng-model='new_image.author'>
-						<input type="text" placeholder='Like' class="form-control" name="like" ng-model='new_image.like'>
-						<input type="text" placeholder='Comment' class="form-control" name="comment" ng-model='new_image.comment'>
-					</div>
-				</div>
-				<button type="submit" class="btn btn-primary" ng-click='addImage()'>submit</button>
-				<button type="submit" class="btn btn-primary" ng-click='cancelImage()'>cancel</button>
-			</form>
-		<h3 ng-show="errors() == true" class='error'>Image already exists!</h3> -->
+
 	</div>
 </div>
 </div>

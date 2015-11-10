@@ -9,13 +9,19 @@ app.controller("ImageController", ['$scope','$http',
             }, function errorCallback(error) {
             });
 
+
+
+
+
+		// this is the controller for the add_item function=============================
 		$scope.isvisible = false;
 
-		$scope.Add_item = function () {
+		$scope.add_item_btn = function () {
 
-			$scope.isVisible = !$scope.isVisible;
-
+			$scope.isVisible = true;
 		};
+
+			// var add_item_temp = {};
 
 		$scope.Submit =function () {
 
@@ -23,15 +29,44 @@ app.controller("ImageController", ['$scope','$http',
 
 			$scope.display_images.push($scope.add_item);
 
-			$scope.add_item = '';  
+
 			$scope.isVisible = false;
 
+			$scope.editpage =false;
+
+			// ='' is very different from ' ' there must no empty space here;
+			$scope.add_item = '';
+			// add_item_temp = {
+			// 	title:add_item.title,
+			// 	author:add_item.author,
+			// };
 		};
 
+		//this cancel btn is used by both edit and submit=========================
 		$scope.Cancel = function () {
 
-			$scope.isVisible = !$scope.isVisible;
+
+			$scope.isVisible = false;
+
+			$scope.editpage = false;
+
+			$scope.add_item = '';
+
 		};
+
+		//from here is mainly for eidt btn==============================
+		$scope.editpage = false;
+
+		$scope.editImage = function(image) {
+			$scope.editpage = true;
+
+			$scope.add_item =image;
+		
+		};
+
+
+		//from here below is the delete function=============================================
+
 
 		$scope.isdeleteVisible = false;
 
@@ -58,8 +93,6 @@ app.controller("ImageController", ['$scope','$http',
 	    }
 
 	    $scope.myDropDown = 'list';
-
-
 
     }
 

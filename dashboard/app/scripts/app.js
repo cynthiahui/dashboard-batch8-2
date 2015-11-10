@@ -1,4 +1,8 @@
+<<<<<<< HEAD
+// var app = angular.module('myApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ui.bootstrap.rating'])
+=======
 
+>>>>>>> dashboard@0.1.0
 var app = angular.module('myApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ui.bootstrap'])
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
