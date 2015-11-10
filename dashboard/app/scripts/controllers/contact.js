@@ -30,6 +30,7 @@ app.controller("contactCtrl", ['$scope', '$http', function($scope, $http) {
         console.log("error");
     });
 
+
     //get category
     $http({
         method: 'GET',
@@ -44,31 +45,14 @@ app.controller("contactCtrl", ['$scope', '$http', function($scope, $http) {
         console.log("error");
     });
 
-    //make query tab active or disable by the validation of the form
-    $('#info-form input, #info-form select').each(function() {
-        $(this).on('keyup change', function() {
-            if ($('#info-form')[0].checkValidity() && $scope.contact.location.title != "") {
-                $('#btn-info').removeClass('disabled');
-                $('#query-li').removeClass('disabled');
-            } else {
-                $('#btn-info').addClass('disabled');
-                $('#query-li').addClass('disabled');
-            }
-        });
-    });
-
-    //make confirm tab active or disable by the validation of the form
-    $('#query-form input, #query-form select,#query-form textarea').each(function() {
-        $(this).on('keyup change', function() {
-            if ($('#query-form')[0].checkValidity() && $scope.contact.category.title != "") {
-                $('#btn-query').removeClass('disabled');
-                $('#confirm-li').removeClass('disabled');
-            } else {
-                $('#btn-query').addClass('disabled');
-                $('#confirm-li').addClass('disabled');
-            }
-        });
-    });
+    $scope.locationChange = false;
+    $scope.categoryChange = false;
+    $scope.changeLocation = function() {
+        $scope.locationChange = true;
+    };
+    $scope.changeCategory = function() {
+        $scope.categoryChange = true;
+    };
 
     //init the rating
     $scope.rate = 5;
@@ -108,8 +92,7 @@ app.controller("contactCtrl", ['$scope', '$http', function($scope, $http) {
 
     //send email
     $('#sendEmail').click(function() {
-        // $scope.sendEmail = function() {
-        window.open('mailto:' + $scope.contact.email + '?subject=subject&body=body');
+        window.open('mailto:' + $scope.contact.email + '?subject=information&body=' + $("#content").text());
     });
 
 }]);

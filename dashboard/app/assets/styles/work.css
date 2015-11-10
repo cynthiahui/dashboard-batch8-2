@@ -17,7 +17,6 @@
 }
 
 
-
 #work_add_item {
 	position: absolute;
 	top: 30%;
@@ -31,10 +30,25 @@
     opacity: 1;
     background-color: white;
 }
+#work_delete_item {
+	position: absolute;
+	text-align: center;
+	width: 700px;
+	border-style: solid;
+    border-width: 2px;
+    border-radius:10px;
+    margin-left: 100px;
+    margin-top: 200px;
+    z-index : 2;
+    opacity: 1;
+    background-color: white;
+    border:1px solid black;
+    padding:5px;
+}
 
 #add_item_btn {
 	float: left;
-	margin-left: 300px;
+	/*margin-left: 300px;*/
 }
 
 #add_item_input div {
@@ -52,4 +66,19 @@
 	float: left;
 	margin: 10px;
 	
+}
+
+.image_display{
+	border:2px solid black;
+	float:left;
+}
+.image{
+	width:100%;
+}
+
+#work_title{
+	display:inline-block;
+	border:2px solid black;
+	width:1000px;
+	/*height:100px;*/
 }
