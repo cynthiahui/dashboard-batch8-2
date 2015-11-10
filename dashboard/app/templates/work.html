@@ -2,7 +2,7 @@
 
 	<div class='container-fluid'>
 	<div id="work_title">	
-	    <select ng-model="myDropDown" class="btn btn-info btn-lg">
+	    <select ng-model="myDropDown" class="btn btn-info btn-lg" style="float:left">
 	          <option value="list">
 	          	Select design
 	          </option>
@@ -44,8 +44,17 @@
 	 		</div>
 
  		</div>
+		
+		<div ng-show="isdeleteVisible">
+			<div id="work_delete_item">
+				<p>This will permanently delete the item from the table and action cannot be reverse.If you are sure, please confirm with the appropriate action</p>
+				
+				<button  id="delete_item_submit" class="btn btn-success btn-lg" ng-click="Submit_delete()">Yes,I am sure</button>
 
-	</div>
+				<button id="delete_item_cancel" class="btn btn-default btn-lg" ng-click="Cancel_delete()">Cancel</button>
+			</div>
+		</div>
+	
 
 	<div class="col-sm-2" id='name_search'>
 		<input type='text' class='form-control' placeholder='Name' ng-model="filter_name">
@@ -61,7 +70,7 @@
 	</div>
 </div>
 
-	<div ng-show="myDropDown=='list'">
+	<div ng-show="myDropDown=='list'" >
 		<table class='table table-hover'>
 			<thead>
 				<th>Name</th>
@@ -87,7 +96,7 @@
 	</div>	
 	
 
-	<div ng-show="myDropDown=='card'">
+	<div ng-show="myDropDown=='card'" style="float:left">
 		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
 			<div class="image_display">
 				<div class="image"><img ng-src={{image.image}} class="image"></img></div>
@@ -101,7 +110,7 @@
 			</div>
 		</div>
 	</div>
-</div>
+
 <!-- 
 			<form class='form-inline'>
 				<div class="form-group">
