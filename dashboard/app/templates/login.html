@@ -1,6 +1,6 @@
 <div  class="login-body">
     
-<form class="login-container " ng-controller="LoginCtrl" ng-submit="login()">
+<form name="login_form" class="login-container " ng-controller="LoginCtrl" ng-submit="login()">
     <div class="login-label">
         Login
     </div>
@@ -14,7 +14,7 @@
         <input class="login-input" type="password" placeholder="Password" ng-model="password" required>
     </div>
     <div>
-        <input class="login-input" ng-disabled="form.$invalid" type="submit" value="Login">
+        <input class="login-input" ng-disabled="login_form.$invalid" type="submit" value="Login">
     </div>
 </form>
 </div>

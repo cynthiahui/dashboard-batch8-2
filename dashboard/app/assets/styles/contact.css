@@ -20,3 +20,7 @@
 .confirm-detail div {
   padding-top: 10px;
   padding-bottom: 10px; }
+
+#info-content > div {
+  margin-top: 10px;
+  margin-bottom: 10px; }
