@@ -19,7 +19,7 @@ app.factory("UserService", function($http, $q) {
             $http({
                 method: 'GET',
                 url: 'http://localhost:3000/api/getuser',
-                data: user
+                params: user
             }).then(function(result) {
                 deferred.resolve(result);
             }, function(error) {
