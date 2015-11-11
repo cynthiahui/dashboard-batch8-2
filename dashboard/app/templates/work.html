@@ -26,10 +26,10 @@
 			<form class='form-inline'>
 				<div class="form-group">
 					<div class="col-sm-12">
-						<input type="text" placeholder='Title' class="form-control" name="title" ng-model='new_image.title'>
-						<input type="text" placeholder='Author' class="form-control" name="author" ng-model='new_image.author'>
-						<input type="text" placeholder='Like' class="form-control" name="like" ng-model='new_image.like'>
-						<input type="text" placeholder='Comment' class="form-control" name="comment" ng-model='new_image.comment'>
+						<input type="text" placeholder='Name' class="form-control" name="name" ng-model='filter_name'>
+						<input type="text" placeholder='Author' class="form-control" name="author" ng-model='filter_author'>
+						<input type="text" placeholder='Like' class="form-control" name="like" ng-model='filter_like'>
+						<input type="text" placeholder='Comment' class="form-control" name="comment" ng-model='filter_comment'>
 					</div>
 				</div>
 				<button type="submit" class="btn btn-primary" ng-click='addImage()'>submit</button>
@@ -41,9 +41,6 @@
 		
 		<my-widget ng-if="editpage"></my-widget>
 
-<!-- 		<div id="image_display">
-
-		</div> -->
 	</div>
 
 	<div ng-show="myDropDown=='list'" >
@@ -73,7 +70,6 @@
 	
 
 	<div ng-show="myDropDown=='card'" style="float:left">
-
 		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
 			<div class="image_display">
 				<div class="image"><img ng-src={{image.image}} class="image"></img></div>
