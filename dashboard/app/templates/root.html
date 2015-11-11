@@ -1,35 +1,26 @@
 <div id="main_body">
-
-
-
-<div id="root_header" ng-controller="logoutCtrl">
-    <div id="logo">
-        <img src="../assets/images/src/app/logo.png">
+    <div id="root_header" ng-controller="logoutCtrl">
+        <div id="logo">
+            <img src="../assets/images/src/app/logo.png">
+        </div>
+        <div id="userinfo">
+            <p> {{user}} {{date | date:'MMM dd, y'}}</p>
+        </div>
+        <div id="logout">
+            <button class="btn btn-default" ng-click="logout()"><b>Log Out</b></button>
+        </div>
     </div>
-
-    <div id="userinfo" >
-        <p> {{user}} {{date | date:'MMM dd, y'}}</p>
+    <div  class="row">
+        <div id="root_siderbar" class="col-xs-12 col-sm-3 col-md-3 col-lg-2">
+            <ul>
+                <li ui-sref-active="active"><a ui-sref="root.overview" ><span class="glyphicon glyphicon-cloud"></span><span>Overview</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="root.work"><span class="glyphicon glyphicon-tags"></span><span>Work</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="root.producer" ><span class="glyphicon glyphicon-tint"></span><span>Producer</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="root.contact" ><span class="glyphicon glyphicon-th-large"></span><span>Contact</span></a></li>
+            </ul>
+        </div>
+        <div id="root_content" class="col-xs-12 col-sm-9 col-md-9  col-lg-10">
+            <div ui-view></div>
+        </div>
     </div>
-
-    <div id="logout">
-        <button class="btn btn-default" ng-click="logout()" ><b>Log Out</b></button>
-    </div>
-</div> 
-<div>
-
-    <div id="root_siderbar">
-        <ul>
-
-            <li><a ui-sref="root.overview" ui-sref-active="active"><span class="glyphicon glyphicon-cloud"></span> Overview</a></li>
-            <li><a ui-sref="root.work" ui-sref-active="active"><span class="glyphicon glyphicon-tags"></span> Work</a></li>
-            <li><a ui-sref="root.producer" ui-sref-active="active"><span class="glyphicon glyphicon-tint"></span> Producer</a></li>
-            <li><a ui-sref="root.contact" ui-sref-active="active"><span class="glyphicon glyphicon-th-large"></span> Contact</a></li>
-
-        </ul>
-    </div>
-    <div id="root_content">
-        <div ui-view></div>
-    </div>
-
-</div>
 </div>
