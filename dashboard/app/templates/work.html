@@ -1,5 +1,8 @@
 <div id="work_page" ng-controller='ImageController'>
-	
+
+
+<my-widget ng-show="isVisible"></my-widget> 
+<!-- PLZ remember this must be the format like this my-widget for custom directive -->	
 	<div class='container-fluid'>
 	<div id="work_title">	
 		    <select ng-model="myDropDown" class="btn btn-info btn-lg" style="float:left" id="work_drop_down">
@@ -20,16 +23,16 @@
 
 	 		</div>
 
-	 		<my-widget ng-show="isVisible"></my-widget> 
- 		<!-- PLZ remember this must be the format like this my-widget for custom directive -->
+	 		
+ 		
 
 			<form class='form-inline' id="work_filter_form">
 				<div class="form-group">
 					<div class="col-sm-12">
-						<input type="text" placeholder='Title' class="form-control" name="title" ng-model='new_image.title'>
-						<input type="text" placeholder='Author' class="form-control" name="author" ng-model='new_image.author'>
-						<input type="text" placeholder='Like' class="form-control" name="like" ng-model='new_image.like'>
-						<input type="text" placeholder='Comment' class="form-control" name="comment" ng-model='new_image.comment'>
+						<input type="text" placeholder='Title' class="form-control" name="title" ng-model='filter_name'>
+						<input type="text" placeholder='Author' class="form-control" name="author" ng-model='filter_author'>
+						<input type="text" placeholder='Like' class="form-control" name="like" ng-model='filter_like'>
+						<input type="text" placeholder='Comment' class="form-control" name="comment" ng-model='filter_comment'>
 					</div>
 				</div>
 			</form>
@@ -61,7 +64,7 @@
 				<th>Remove</th>
 			</thead>
 			<tbody>
-				<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
+				<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy:sortBy:reverse">
 					<!-- <td ng-bind='image.id'></td> -->
 					<td ng-bind='image.title'></td>
 					<td ng-bind='image.author'></td>
@@ -80,7 +83,7 @@
 
 	<div ng-show="myDropDown=='card'" style="float:left">
 
-		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
+		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy:sortBy:reverse">
 			<div class="image_display">
 				<div class="image"><img ng-src={{image.image}} class="image"></img></div>
 				<!-- <td ng-bind='image.id'></td> -->

@@ -58,6 +58,21 @@ app.controller("ImageController", ['$scope','$http',
 			$scope.add_item =image;
 		
 		};
+
+
+
+
+		// ==========this is the filter function
+
+		$scope.dosort = function (tag) {
+			$scope.sortBy = tag;
+			$scope.reverse = !$scope.reverse;
+
+		};
+
+		// ==============================
+
+
 			
 
 		
