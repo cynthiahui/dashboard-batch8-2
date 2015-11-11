@@ -2,28 +2,28 @@
 	
 	<div class='container-fluid'>
 	<div id="work_title">	
-	    <select ng-model="myDropDown" class="btn btn-info btn-lg" style="float:left">
-	          <option value="list">
-	          	Select design
-	          </option>
-	          <option value="list">
-	          	list
-	          </option>
-	          <option value="card">
-	          	card
-	          </option>
-	    </select>
+		    <select ng-model="myDropDown" class="btn btn-info btn-lg" style="float:left" id="work_drop_down">
+		          <option value="list">
+		          	Select design
+		          </option>
+		          <option value="list">
+		          	list
+		          </option>
+		          <option value="card">
+		          	card
+		          </option>
+		    </select>
 
-		<div id="add_item_btn">
+			<div id="add_item_btn">
 
- 		<button class="btn btn-danger btn-lg" ng-click="add_item_btn()" >Add Item</button> 
+	 		<button class="btn btn-danger btn-lg" ng-click="add_item_btn()" >Add Item</button> 
 
- 		</div>
+	 		</div>
 
- 		<my-widget ng-show="isVisible"></my-widget> 
+	 		<my-widget ng-show="isVisible"></my-widget> 
  		<!-- PLZ remember this must be the format like this my-widget for custom directive -->
 
-			<form class='form-inline'>
+			<form class='form-inline' id="work_filter_form">
 				<div class="form-group">
 					<div class="col-sm-12">
 						<input type="text" placeholder='Title' class="form-control" name="title" ng-model='new_image.title'>
@@ -32,19 +32,23 @@
 						<input type="text" placeholder='Comment' class="form-control" name="comment" ng-model='new_image.comment'>
 					</div>
 				</div>
-				<button type="submit" class="btn btn-primary" ng-click='addImage()'>submit</button>
-				<button type="submit" class="btn btn-primary" ng-click='cancelImage()'>cancel</button>
 			</form>
 		<h3 ng-show="errors() == true" class='error'>Image already exists!</h3>
 
 
-		
-		<my-widget ng-if="editpage"></my-widget>
-
-<!-- 		<div id="image_display">
-
-		</div> -->
 	</div>
+
+
+		<div id="work_delete_item_body" ng-show="isdeleteVisible"></div>
+		<div id="work_delete_item" ng-show="isdeleteVisible">
+		
+			<h2>Delete item?</h2>
+			<p>This will permanently delete the item from the table and the action cannot be reversed. If you are sure, please comfirn with the appropriate action</p>
+			<button class="btn btn-lg btn-danger" ng-click="Submit_delete()">Yes, I am sure</button>
+			<button class="btn btn-lg btn-default" ng-click="Cancel_delete()">Cancel</button>
+		</div>
+	
+	
 
 	<div ng-show="myDropDown=='list'" >
 		<table class='table table-hover'>
@@ -70,6 +74,8 @@
 			</tbody>
 		</table>
 	</div>	
+
+	<my-widget ng-show="editpage"></my-widget>
 	
 
 	<div ng-show="myDropDown=='card'" style="float:left">
@@ -86,7 +92,7 @@
 				<div style="color:blue; float:right;">
 
 				<a ng-click='editImage(image)'>Edit</a>
-
+				
 				<a ng-click='removeImage($index)'>Delete</a>
 				</div>
 
@@ -96,5 +102,4 @@
 
 
 	</div>
-</div>
 </div>
