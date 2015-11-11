@@ -11,6 +11,7 @@
 
 #add_item_body {
 	position: fixed;
+
 	top: 0.1px;
 	left: 0.1px;
 	z-index: 99;
