@@ -1,5 +1,5 @@
 <div id="work_page" ng-controller='ImageController'>
-	
+	<my-widget ng-show="isVisible"></my-widget>
 	<div class='container-fluid'>
 	<div id="work_title">	
 		    <select ng-model="myDropDown" class="btn btn-info btn-lg" style="float:left" id="work_drop_down">
@@ -20,7 +20,7 @@
 
 	 		</div>
 
-	 		<my-widget ng-show="isVisible"></my-widget> 
+	 		 
  		
 
 			<form class='form-inline' id="work_filter_form">

@@ -10,7 +10,7 @@
 
 
 #add_item_body {
-	position: absolute;
+	position: fixed;
 	top: 1px;
 	left: 1px;
 	z-index: 99;
@@ -23,8 +23,8 @@
 
 
 #work_add_item {
-	position: absolute;
-	top: 30%;
+	position: fixed;
+	top: 25%;
 	left: 35%;
 	text-align: center;
 	width: 600px;
@@ -42,7 +42,7 @@
 }
 
 #work_delete_item {
-	position: absolute;
+	position: fixed;
 	text-align: center;
 	width: 700px;
 	border-style: solid;
@@ -58,7 +58,7 @@
 }
 
 #work_delete_item_body{
-	position: absolute;
+	position: fixed;
 	top: 0.5px;
 	left: 0.5px;
 	z-index: 1;
