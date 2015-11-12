@@ -1,22 +1,42 @@
-<div id="main_body">
-    <div id="root_header" ng-controller="logoutCtrl">
+<div id="main_body" ng-controller="logoutCtrl">
+    <div id="root_header">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" id="top-btn" data-toggle="collapse" data-target="#menu-collapse" aria-expanded="false">
+            </button>
+            <span id="logo"><img src="../assets/images/src/app/logo.png"></span>
+        </div>
+        <div class="collapse navbar-collapse" id="menu-collapse">
+            <ul class="nav navbar-nav navbar-left">
+                <li id="userinfo">{{user}} {{date | date:'MMM dd, y'}}</li>
+            </ul>
+            <ul class="nav navbar-nav navbar-right">
+                <li>
+                    <button class="btn btn-default small-screen-none"><b>Log Out</b></button>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <!--     <div id="root_header">
         <div id="logo">
             <img src="../assets/images/src/app/logo.png">
         </div>
-        <div id="userinfo">
-            <p> {{user}} {{date | date:'MMM dd, y'}}</p>
+        <div id="userinfo" class="small-screen-none">
+            <p> </p>
         </div>
         <div id="logout">
-            <button class="btn btn-default" ng-click="logout()"><b>Log Out</b></button>
+
+            <button class="btn btn-default small-screen-none" ng-click="logout()" ng-show="menus"><b>Log Out</b></button>
+            <button type="button" id="top-btn" ng-click="toggle()" class="small-screen-display">
+            </button>
         </div>
-    </div>
-    <div  class="row">
+    </div> -->
+    <div class="row">
         <div id="root_siderbar" class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
             <ul>
-                <li ui-sref-active="active"><a ui-sref="root.overview" ><span class="glyphicon glyphicon-cloud"></span><span>Overview</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="root.overview"><span class="glyphicon glyphicon-cloud"></span><span>Overview</span></a></li>
                 <li ui-sref-active="active"><a ui-sref="root.work"><span class="glyphicon glyphicon-tags"></span><span>Work</span></a></li>
-                <li ui-sref-active="active"><a ui-sref="root.producer" ><span class="glyphicon glyphicon-tint"></span><span>Producer</span></a></li>
-                <li ui-sref-active="active"><a ui-sref="root.contact" ><span class="glyphicon glyphicon-th-large"></span><span>Contact</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="root.producer"><span class="glyphicon glyphicon-tint"></span><span>Producer</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="root.contact"><span class="glyphicon glyphicon-th-large"></span><span>Contact</span></a></li>
             </ul>
         </div>
         <div id="root_content" class="col-xs-12 col-sm-12 col-md-9  col-lg-9">
