@@ -4,15 +4,12 @@ app.controller("ImageController", ['$scope', '$http',
             method: 'GET',
             url: 'http://localhost:3000/api/work',
         }).then(function successCallback(success) {
-
             $scope.display_images = success.data.works;
         }, function errorCallback(error) {});
 
 
-
         $scope.isvisible = false;
         $scope.editpage = false;
-
 
         $scope.add_item_btn = function() {
 
@@ -32,20 +29,18 @@ app.controller("ImageController", ['$scope', '$http',
             }
             $scope.isVisible = false;
             $scope.add_item = '';
-            $scope.editpage = false;
         };
 
         $scope.Cancel = function() {
 
             $scope.isVisible = false;
-
             $scope.add_item = '';
             $scope.editpage = false;
-
         };
 
         $scope.editImage = function(image) {
             $scope.isvisible = false;
+            $scope.editpage = true;
             temp_item = image;
             $scope.add_item = {
                 title: image.title,
@@ -53,32 +48,10 @@ app.controller("ImageController", ['$scope', '$http',
                 like: image.like,
                 comment: image.comment
             };
-
-            $scope.editpage = true;
-
         };
+
 
         $scope.isdeleteVisible = false;
-
-        var index;
-        $scope.removeImage = function($index) {
-            index = $index;
-            console.log($index);
-            $scope.isdeleteVisible = !$scope.isdeleteVisible;
-
-        };
-        $scope.Submit_delete = function() {
-            console.log(index);
-            $scope.display_images.splice(index, 1);
-            $scope.isdeleteVisible = !$scope.isdeleteVisible;
-        };
-
-        $scope.Cancel_delete = function() {
-
-            $scope.isdeleteVisible = !$scope.isdeleteVisible;
-        };
-
-		$scope.isdeleteVisible = false;
 
 	  	var index; 
  		$scope.removeImage = function($index){
@@ -88,9 +61,23 @@ app.controller("ImageController", ['$scope', '$http',
 		   
 	     };
 
+	    $scope.Submit_delete = function(){
+		     	console.log(index);
+			  	$scope.display_images.splice(index, 1);
+			  	$scope.isdeleteVisible = !$scope.isdeleteVisible;
+ 	  		};
+
+		$scope.Cancel_delete = function () {
+
+			$scope.isdeleteVisible = !$scope.isdeleteVisible;
+		};
+
 	    $scope.myDropDown = 'list';
 
-
+	    var orderBy = $filter('orderBy');
+		$scope.order = function(predicate, reverse) {
+	      $scope.display_images = orderBy($scope.display_images, predicate, reverse);
+	    };
     }
 
 ]);

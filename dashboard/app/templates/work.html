@@ -1,5 +1,4 @@
 <div id="work_page" ng-controller='ImageController'>
-	
 
 	<div id="work_title">
 			<div id="btn_group">	
@@ -26,6 +25,7 @@
 				<!-- PLZ remember this must be the format like this my-widget for custom directive -->	
 			</div>
 
+
 			<form id="work_filter_form" class="form-inline">
 				
 					
@@ -40,6 +40,7 @@
 	</div>
 
 
+
 		<div id="work_delete_item_body" ng-show="isdeleteVisible"></div>
 		<div id="work_delete_item" ng-show="isdeleteVisible">
 		
@@ -51,18 +52,21 @@
 	
 	
 
+
 	<div ng-show="myDropDown=='list'" >
 		<table class='table table-hover'>
 			<thead>
-				<th>Name</th>
-				<th>Author</th>
-				<th>Like</th>
-				<th>Comment</th>
+				<th ng-mouseover="reverse=true;order('title', reverse)">Name</th>
+				<th ng-mouseover="reverse=!reverse;order('author', reverse)">author</a></th>
+				<th ng-mouseover="reverse=!reverse;order('like',reverse)">Like</th>
+				<th ng-mouseover="reverse=!reverse;order('comment',reverse)">Comment</th>
 				<th>Modify</th>
 				<th>Remove</th>
 			</thead>
 			<tbody>
-				<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy:sortBy:reverse">
+
+				<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment ">
+
 					<!-- <td ng-bind='image.id'></td> -->
 					<td ng-bind='image.title'></td>
 					<td ng-bind='image.author'></td>
@@ -79,9 +83,10 @@
 	<my-widget ng-show="editpage"></my-widget>
 	
 
-	<div ng-show="myDropDown=='card'" id="drop_down_card">
 
-		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy:sortBy:reverse">
+	<div ng-show="myDropDown=='card'" style="float:left">
+		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
+
 			<div class="image_display">
 				<div class="image"><img ng-src={{image.image}} class="image"></img></div>
 				<!-- <td ng-bind='image.id'></td> -->
