@@ -1,4 +1,4 @@
-@media screen and (max-width: 767px) {
+/*@media screen and (max-width: 767px) {
     #root_siderbar {
         text-align: center;
     }
@@ -12,30 +12,32 @@
         width: 100%;
         border-bottom: 3px dotted #e65c00;
     }
-}
 
-@media screen and (min-width: 768px) {
+
+}*/
+
+/*@media screen and (min-width: 780px) {
     #root_siderbar {
         text-align: left;
+       
     }
     #root_siderbar ul {
-        width: 240px;
+        width: 100%;
     }
+
     #root_siderbar li.active {
         border-left: 3px solid #e65c00;
     }
-}
-
-.row {
-     margin-right: 0px; 
-     margin-left: 0px; 
-}
+    
+}*/
 
 #root_siderbar {
     font-weight: bold;
     margin: 0px;
     font-size: 1.7em;
     margin-top: 20px;
+    width: 20%;
+    float: left;
 }
 
 #root_siderbar ul {
@@ -76,12 +78,15 @@
 }
 
 #root_content {
-    position: relative;
     margin: 0px;
     font-size: 1.3em;
     text-align: left;
+    width: 80%;
+    float: right;
+    
 }
 
 #root_siderbar li.active>a {
     color: #FF5C33;
+    border-left: solid 5px;
 }

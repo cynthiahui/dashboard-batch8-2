@@ -11,24 +11,27 @@ app.controller("ImageController", ['$scope','$http',
 
 
 
-
-
-		
 		$scope.isvisible = false;
+
+		$scope.editpage = false;
 
 		$scope.add_item_btn = function () {
 
 			$scope.isVisible = true;
-			$scope.editpage =false;
 		};
 
-		
+		var temp_item;
 
 		$scope.Submit =function () {
 
-			var add_item = {};
-
-			$scope.display_images.push($scope.add_item);
+			if (!$scope.isvisible) {
+				temp_item.title = $scope.add_item.title;
+				temp_item.author = $scope.add_item.author;
+				temp_item.like = $scope.add_item.like;
+				temp_item.comment = $scope.add_item.comment;
+			}else {
+				$scope.display_images.push($scope.add_item);
+			}
 
 			$scope.isVisible = false;
 
@@ -38,7 +41,6 @@ app.controller("ImageController", ['$scope','$http',
 			
 		};
 
-		
 		$scope.Cancel = function () {
 
 			$scope.isVisible = false;
@@ -49,37 +51,22 @@ app.controller("ImageController", ['$scope','$http',
 
 		};
 
-		$scope.editpage = false;
-
 		$scope.editImage = function(image) {
 			$scope.isvisible = false;
 			$scope.editpage = true;
 
-			$scope.add_item =image;
+			temp_item = image;
+
+			$scope.add_item = {
+				title : image.title,
+				author : image.author,
+				like : image.like,
+				comment : image.comment,
+			};
 		
 		};
 
 
-
-
-		// ==========this is the filter function
-
-		$scope.dosort = function (tag) {
-			$scope.sortBy = tag;
-			$scope.reverse = !$scope.reverse;
-
-		};
-
-		// ==============================
-
-
-			
-
-		
-
-
-
-		
 
 		$scope.isdeleteVisible = false;
 

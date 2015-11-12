@@ -1,3 +1,46 @@
+@media screen and (max-width: 1050px) {
+	#root_content {
+		float: none;
+		width: 100%;
+	}
+	#root_siderbar {
+		float: none;
+		width: 100%;
+		text-align: center;
+	}
+	#root_siderbar ul {
+		padding-left: 0px;
+	}
+
+	 #root_siderbar li.active {
+        width: 100%;
+        border-bottom: 3px dotted #e65c00;
+    }
+
+	#work_add_item{
+		position: relative;
+		top: 2px;
+		left: 2px;
+	}
+}
+
+@media screen and (max-width: 510px) {
+    #main_body {
+        width: 505px;
+}
+	
+	#work_filter_form  {
+		float: none;
+		text-align: center;
+	}
+}
+
+
+
+
+
+
+
 #work_page {
 	text-align: left;
 	margin-top: 20px;
@@ -6,6 +49,7 @@
 #work_drop_down {
 	background-color: #0075db;
 	margin-right: 20px;
+	float: left;
 }
 
 
@@ -38,7 +82,14 @@
 }
 
 #work_filter_form {
+	
 	text-align: right;
+	margin-right: 20px;
+
+}
+
+#drop_down_card {
+	float: left;
 }
 
 #work_delete_item {
@@ -70,8 +121,7 @@
 
 #add_item_btn {
 	float: left;
-	margin-right: 150px;
-	/*margin-left: 300px;*/
+	margin-top: 2px;
 }
 
 #add_item_input div {
@@ -92,7 +142,6 @@
 }
 
 .image_display{
-	/*border:2px solid black;*/
 	float:left;
 }
 .image{
@@ -100,7 +149,8 @@
 }
 
 #work_title{
-	display:inline-block;
 	width: 100%;
+	
+	
 	
 }
