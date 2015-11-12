@@ -1,5 +1,5 @@
-app.controller("ImageController", ['$scope', '$http',
-    function($scope, $http) {
+app.controller("ImageController", ['$scope', '$http', '$filter',
+    function($scope, $http, $filter) {
         $http({
             method: 'GET',
             url: 'http://localhost:3000/api/work',
