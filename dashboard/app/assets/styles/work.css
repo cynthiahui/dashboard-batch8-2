@@ -1,4 +1,4 @@
-@media screen and (max-width: 1050px) {
+@media screen and (max-width: 1070px) {
 	#root_content {
 		float: none;
 		width: 100%;
@@ -24,9 +24,22 @@
 	}
 }
 
+@media screen and (max-width: 960px) {
+	#work_drop_down {
+		float: none;
+	}
+	#add_item_btn {
+		float: none;
+	}
+	#work_filter_form {
+		text-align: initial;
+	}
+}
+
 @media screen and (max-width: 510px) {
     #main_body {
         width: 505px;
+        text-align: center;
 }
 	
 	#work_filter_form  {
@@ -90,6 +103,7 @@
 
 #drop_down_card {
 	float: left;
+	margin-top: 20px;
 }
 
 #work_delete_item {
