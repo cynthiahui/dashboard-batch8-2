@@ -64,9 +64,7 @@
 				<th>Remove</th>
 			</thead>
 			<tbody>
-
 				<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment ">
-
 					<!-- <td ng-bind='image.id'></td> -->
 					<td ng-bind='image.title'></td>
 					<td ng-bind='image.author'></td>
@@ -81,8 +79,6 @@
 	</div>	
 
 	<my-widget ng-show="editpage"></my-widget>
-	
-
 
 	<div ng-show="myDropDown=='card'" style="float:left">
 		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
