@@ -65,7 +65,7 @@
 				<th>Remove</th>
 			</thead>
 			<tbody>
-				<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
+				<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'title'">
 					<!-- <td ng-bind='image.id'></td> -->
 					<td ng-bind='image.title'></td>
 					<td ng-bind='image.author'></td>
