@@ -1,5 +1,5 @@
-app.controller("ImageController", ['$scope','$http',
-    function($scope, $http) {
+app.controller("ImageController", ['$scope','$http','$filter',
+    function($scope, $http, $filter) {
 		 $http({
                 method: 'GET',
                 url: 'http://localhost:3000/api/work',
@@ -11,9 +11,6 @@ app.controller("ImageController", ['$scope','$http',
 
 
 
-
-
-		
 		$scope.isvisible = false;
 
 		$scope.add_item_btn = function () {
@@ -62,11 +59,6 @@ app.controller("ImageController", ['$scope','$http',
 		};
 			
 
-		
-
-
-
-		
 
 		$scope.isdeleteVisible = false;
 
@@ -91,8 +83,15 @@ app.controller("ImageController", ['$scope','$http',
 	    // $scope.editImage =function($index){
 	    // 	 // $scope.display_images.splice($index, 1);
 	    // }
-
+	   
 	    $scope.myDropDown = 'list';
+
+	    var orderBy = $filter('orderBy');
+		$scope.order = function(predicate, reverse) {
+	      $scope.display_images = orderBy($scope.display_images, predicate, reverse);
+	    };
+
+
 
     }
 

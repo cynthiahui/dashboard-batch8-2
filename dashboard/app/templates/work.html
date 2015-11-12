@@ -57,15 +57,15 @@
 	<div ng-show="myDropDown=='list'" >
 		<table class='table table-hover'>
 			<thead>
-				<th>Name</th>
-				<th>Author</th>
-				<th>Like</th>
-				<th>Comment</th>
+				<th ng-mouseover="reverse=true;order('title', reverse)">Name</th>
+				<th ng-mouseover="reverse=!reverse;order('author', reverse)">author</a></th>
+				<th ng-mouseover="reverse=!reverse;order('like',reverse)">Like</th>
+				<th ng-mouseover="reverse=!reverse;order('comment',reverse)">Comment</th>
 				<th>Modify</th>
 				<th>Remove</th>
 			</thead>
 			<tbody>
-				<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'title'">
+				<tr ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment ">
 					<!-- <td ng-bind='image.id'></td> -->
 					<td ng-bind='image.title'></td>
 					<td ng-bind='image.author'></td>
