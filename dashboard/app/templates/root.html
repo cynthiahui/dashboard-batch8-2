@@ -10,8 +10,10 @@
             <button class="btn btn-default" ng-click="logout()"><b>Log Out</b></button>
         </div>
     </div>
+
     <div>
         <div id="root_siderbar">
+
             <ul>
                 <li ui-sref-active="active"><a ui-sref="root.overview" ><span class="glyphicon glyphicon-cloud"></span><span>Overview</span></a></li>
                 <li ui-sref-active="active"><a ui-sref="root.work"><span class="glyphicon glyphicon-tags"></span><span>Work</span></a></li>
@@ -20,6 +22,7 @@
             </ul>
         </div>
         <div id="root_content">
+
             <div ui-view></div>
         </div>
     </div>
