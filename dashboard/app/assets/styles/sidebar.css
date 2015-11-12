@@ -1,4 +1,4 @@
-/*@media screen and (max-width: 767px) {
+@media screen and (max-width: 767px) {
     #root_siderbar {
         text-align: center;
     }
@@ -14,9 +14,9 @@
     }
 
 
-}*/
+}
 
-/*@media screen and (min-width: 780px) {
+@media screen and (min-width: 768px) {
     #root_siderbar {
         text-align: left;
        
@@ -29,7 +29,7 @@
         border-left: 3px solid #e65c00;
     }
     
-}*/
+}
 
 #root_siderbar {
     font-weight: bold;
@@ -47,7 +47,7 @@
 #root_siderbar ul li {
     text-decoration: none;
     vertical-align: middle;
-    padding: 5px;
+    /*padding: 5px;*/
 }
 
 #root_siderbar ul li a {
@@ -88,5 +88,5 @@
 
 #root_siderbar li.active>a {
     color: #FF5C33;
-    border-left: solid 5px;
+/*   border-left: 4px solid #e65c00;*/
 }
