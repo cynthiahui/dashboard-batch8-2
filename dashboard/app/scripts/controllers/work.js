@@ -83,19 +83,10 @@ app.controller("ImageController", ['$scope','$http',
 			  	$scope.isdeleteVisible = !$scope.isdeleteVisible;
  	  		};
 
- 	 	 // $scope.Submit_delete = function($index){
-		  	//  $scope.display_images.splice($index, 1);
-		  	//  $scope.isdeleteVisible = !$scope.isdeleteVisible;
- 	  	// };
-
 		$scope.Cancel_delete = function () {
 
 			$scope.isdeleteVisible = !$scope.isdeleteVisible;
 		};
-
-	    // $scope.editImage =function($index){
-	    // 	 // $scope.display_images.splice($index, 1);
-	    // }
 
 	    $scope.myDropDown = 'list';
 
