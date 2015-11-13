@@ -80,7 +80,7 @@
 
 	<my-widget ng-show="editpage"></my-widget>
 
-	<div ng-show="myDropDown=='card'" style="float:left">
+	<div ng-show="myDropDown=='card'" id="drop_down_card">
 		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
 
 			<div class="image_display">
