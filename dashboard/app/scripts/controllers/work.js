@@ -72,6 +72,7 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
 			$scope.isdeleteVisible = !$scope.isdeleteVisible;
 		};
 
+
 	    $scope.myDropDown = 'list';
 
 	    var orderBy = $filter('orderBy');
