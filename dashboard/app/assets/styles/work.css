@@ -15,6 +15,7 @@
 	 #root_siderbar li.active {
         width: 100%;
         border-bottom: 3px dotted #e65c00;
+        border-left-style:none;
     }
 
 	
@@ -127,6 +128,15 @@
 
 
 
+.work-input{
+	width: 100%;
+	border-radius: 3px;
+	display: inline-block;
+	margin: 3px;
+	border: 1px solid #e1e1d1;
+}
+
+
 
 #work_page {
 	text-align: left;
@@ -172,8 +182,8 @@
 }
 
 #drop_down_card {
-	float: left;
 	margin-top: 20px;
+	margin-right: 20px;
 }
 
 #work_delete_item {
@@ -221,16 +231,12 @@
 	
 }
 
-.image_display{
-	float:left;
-}
-.image{
-	width:100%;
-}
 
 #work_title{
-	width: 100%;
-	
-	
-	
+	width: 100%;	
+}
+
+.thumbnail>img, .thumbnail a>img {
+     margin-right: 0; 
+     margin-left: 0; 
 }
