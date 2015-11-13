@@ -1,42 +1,41 @@
 <div id="work_page" ng-controller='ImageController'>
+	<my-widget ng-show="isVisible"></my-widget>
+	<div class='container-fluid'>
+	<div id="work_title">	
+		    <select ng-model="myDropDown" class="btn btn-info btn-lg" style="float:left;height:40px;width:160px;font-size:1em" id="work_drop_down">
+		          <option value="list">
+		          	Select design
+		          </option>
+		          <option value="list">
+		          	list
+		          </option>
+		          <option value="card">
+		          	card
+		          </option>
+		    </select>
 
-	<div id="work_title">
-			<div id="btn_group">	
-			    <select ng-model="myDropDown" class="btn btn-info btn-lg" id="work_drop_down">
-			          <option value="list">
-			          	Select design
-			          </option>
-			          <option value="list">
-			          	list
-			          </option>
-			          <option value="card">
-			          	card
-			          </option>
-			    </select>
+			<!-- <div id="add_item_btn"> -->
 
-				<div id="add_item_btn">
+	 		<button class="btn btn-danger btn-lg" ng-click="add_item_btn()" style="height:40px;width:120px;font-size:1em">Add Item</button> 
 
-		 		<button class="btn btn-danger btn-lg" ng-click="add_item_btn()" >Add Item</button> 
-
-		 		</div>
-	 		
-
-		 		<my-widget ng-show="isVisible"></my-widget> 
-				<!-- PLZ remember this must be the format like this my-widget for custom directive -->	
-			</div>
+	 		<!-- </div> -->
 
 
-			<form id="work_filter_form" class="form-inline">
-				
-					
-
-						<div class="form-group"><input type="text" placeholder='Name'  name="name" ng-model='filter_name' class="form-control"></div>
-						<div class="form-group"><input type="text" placeholder='Author' name="author" ng-model='filter_author' class="form-control"></div>
-						<div class="form-group"><input type="text" placeholder='Like' name="like" ng-model='filter_like' class="form-control"></div>
-						<div class="form-group"><input type="text" placeholder='Comment'  name="comment" ng-model='filter_comment' class="form-control"></div>
-					
-				
+ 		<my-widget ng-show="isVisible"></my-widget> 
+ 	
+			<form class='form-inline' id="work_filter_form">
+				<div class="form-group">
+					<div class="col-sm-12">
+						<input type="text" placeholder='Name' class="form-control" name="name" ng-model='filter_name'>
+						<input type="text" placeholder='Author' class="form-control" name="author" ng-model='filter_author'>
+						<input type="text" placeholder='Like' class="form-control" name="like" ng-model='filter_like'>
+						<input type="text" placeholder='Comment' class="form-control" name="comment" ng-model='filter_comment'>
+					</div>
+				</div>
 			</form>
+		<h3 ng-show="errors() == true" class='error'>Image already exists!</h3>
+
+
 	</div>
 
 
@@ -79,10 +78,10 @@
 	</div>	
 
 	<my-widget ng-show="editpage"></my-widget>
+	
 
-	<div ng-show="myDropDown=='card'" id="drop_down_card">
+	<div ng-show="myDropDown=='card'" style="float:left">
 		<div class="col-lg-4"  ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
-
 			<div class="image_display">
 				<div class="image"><img ng-src={{image.image}} class="image"></img></div>
 				<!-- <td ng-bind='image.id'></td> -->
@@ -93,10 +92,9 @@
 
 				<div style="color:blue; float:right;">
 
-					<a ng-click='editImage(image)'>Edit |</a>
-					
-					<a ng-click='removeImage($index)'>Delete</a>
-
+				<a ng-click='editImage(image)'>Edit |</a>
+				
+				<a ng-click='removeImage($index)'>Delete</a>
 				</div>
 
 			</div>
@@ -104,5 +102,5 @@
 	</div>
 
 
-	
+	</div>
 </div>

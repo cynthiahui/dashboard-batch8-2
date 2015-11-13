@@ -20,7 +20,7 @@ Gulp must be installed globally in order to use the command line tools. *You may
 
 
 ```
-npm install -g grunt
+npm install -g grunt-cli
 npm install -g gulp
 ```
 
