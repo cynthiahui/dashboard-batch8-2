@@ -2,33 +2,43 @@
 
 #root_header {
     font-size: 1.4em;
-    height: 60px;
     background-color: #F5F5F5;
+    padding: 10px;
 }
 
-#logo {
-    width: 32px;
-    float: left;
-    margin-top: 5px;
-    margin-left: 50px;
-}
 
 #logo img {
     width: 40px;
     height: 40px;
-    vertical-align: top;
 }
 
 #userinfo {
+/*<<<<<<< HEAD*/
     margin-top: 10px;
     margin-left: 50px;
     width: 250px;
     float: left;
     vertical-align: middle;
+/*=======*/
+    margin-top: 5px;
+    margin-left: 30px;
+/*>>>>>>> dashboard@0.1.0-contact*/
 }
 
 #logout {
     margin-top: 10px;
-    margin-right: 30px;
-    float: right;
+}
+
+#top-btn{
+    background-color: white;
+    border-color: #ccc;
+    width: 33px;
+    height: 33px;
+    border-radius: 5px;
+    border-style: none;
+    background-image: url(../images/src/app/stack.png);
+}
+
+#top-btn:hover{
+    background-color: #e0e0d1;
 }

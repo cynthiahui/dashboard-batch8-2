@@ -24,7 +24,7 @@ app.controller("LoginCtrl", ['$scope', '$location', 'AuthService', 'UserService'
             };
             userService.getUser(user).then(function(result) {
                 authService.WriteCookie(result.data.name);
-                $location.path("/root/work");
+                $location.path("/root/overview");
             });
 
         }
