@@ -35,7 +35,7 @@
 @media screen and (max-width: 510px) {
     #main_body {
         width: 505px;
-        text-align: center;
+        /*text-align: center;*/
 }
 	
 	#work_filter_form  {
