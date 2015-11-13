@@ -30,5 +30,19 @@ var app = angular.module('myApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ui.bo
         .state('root.contact', {
             url: '/contact',
             templateUrl: '../templates/contact.html'
+        })
+        .state('root.producer.cynthia', {
+            url: '/cynthia',
+            templateUrl: '../templates/cynthia.html'
+        })
+
+        .state('root.producer.kun', {
+            url: '/kun',
+            templateUrl: '../templates/kun.html'
+        })
+
+        .state('root.producer.cj', {
+            url: '/cj',
+            templateUrl: '../templates/cj.html'
         });
     });
