@@ -1,42 +1,43 @@
-<div id="work_page" ng-controller='ImageController'>
+<div id="work_page" ng-controller='ImageController' class="container-fluid">
 
-	<div id="work_title">
-			<div id="btn_group">	
-			    <select ng-model="myDropDown" class="btn btn-info btn-lg" id="work_drop_down">
-			          <option value="list">
-			          	Select design
-			          </option>
-			          <option value="list">
-			          	list
-			          </option>
-			          <option value="card">
-			          	card
-			          </option>
-			    </select>
+	<div id="work_title" class="row" >
+			<div id="btn_group" class="col-lg-4 col-md-12 col-xs-12">	
+				
+					<select ng-model="myDropDown" class="btn btn-info btn-lg " id="work_drop_down">
+					        <option value="list">
+					          	Select design
+					        </option>
+					        <option value="list">
+					          	list
+					        </option>
+					        <option value="card">
+					          	card
+					        </option>
+					</select>
+					
+				
+					<div id="add_item_btn">
 
-				<div id="add_item_btn">
+			 		<button class="btn btn-danger btn-lg" ng-click="add_item_btn()" >Add Item</button> 
 
-		 		<button class="btn btn-danger btn-lg" ng-click="add_item_btn()" >Add Item</button> 
-
-		 		</div>
-	 		
-
+			 		</div>
+	 			
 		 		<my-widget ng-show="isVisible"></my-widget> 
 				<!-- PLZ remember this must be the format like this my-widget for custom directive -->	
 			</div>
 
+			<div id="work_filter_form" class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
 
-			<form id="work_filter_form" class="form-inline">
-				
-					
+				<form class="form-inline">
 
-						<div class="form-group"><input type="text" placeholder='Name'  name="name" ng-model='filter_name' class="form-control"></div>
-						<div class="form-group"><input type="text" placeholder='Author' name="author" ng-model='filter_author' class="form-control"></div>
-						<div class="form-group"><input type="text" placeholder='Like' name="like" ng-model='filter_like' class="form-control"></div>
-						<div class="form-group"><input type="text" placeholder='Comment'  name="comment" ng-model='filter_comment' class="form-control"></div>
+							<div class="form-group col-md-3 col-sm-3"><input type="text" placeholder='Name'  name="name" ng-model='filter_name' class="form-control"></div>
+							<div class="form-group col-md-3 col-sm-3"><input type="text" placeholder='Author' name="author" ng-model='filter_author' class="form-control"></div>
+							<div class="form-group col-md-3 col-sm-3" ><input type="text" placeholder='Like' name="like" ng-model='filter_like' class="form-control"></div>
+							<div class="form-group col-md-3 col-sm-3"><input type="text" placeholder='Comment'  name="comment" ng-model='filter_comment' class="form-control"></div>
 					
-				
-			</form>
+				</form>
+
+			</div>
 	</div>
 
 
