@@ -35,29 +35,16 @@
 	
 }
 
-@media screen and (max-width: 500px) {
+/*@media screen and (max-width: 500px) {
 	#main_body {
 		width: 360px;
 	}
 }
-
+*/
 
 
 @media screen and (min-width: 1280px) {
-	#work_add_item{
-		position: fixed;
-		top: 200px;
-		left: 30%;
-		width: 600px;
 
-	}
-
-	#work_delete_item{
-		position: fixed;
-		top: 200px;
-		left: 30%;
-		width: 700px;
-	}
 
 	#work_drop_down {
 		float: left;
@@ -74,6 +61,53 @@
 
 
 }
+
+@media screen and (max-width:700px) {
+	#work_add_item{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+  		-webkit-transform: translate(-50%, -50%);
+  		-moz-transform: translate(-50%, -50%);
+	}
+
+	#work_delete_item{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 100%;
+		transform: translate(-50%, -50%);
+  		-webkit-transform: translate(-50%, -50%);
+  		-moz-transform: translate(-50%, -50%);
+	}
+}
+
+
+@media screen and (min-width:701px) {
+	#work_add_item{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 600px;
+		transform: translate(-50%, -50%);
+  		-webkit-transform: translate(-50%, -50%);
+  		-moz-transform: translate(-50%, -50%);
+	}
+
+	#work_delete_item{
+		position: fixed;
+		top: 50%;
+		left: 50%;
+		width: 700px;
+		transform: translate(-50%, -50%);
+  		-webkit-transform: translate(-50%, -50%);
+  		-moz-transform: translate(-50%, -50%);
+	}
+}
+
+
 
 
 

@@ -1,3 +1,20 @@
+@media screen and (max-width: 1070px) {
+     #root_siderbar li.active {
+        width: 100%;
+        border-bottom: 3px dotted #e65c00;
+        border-left: none; 
+    }
+}
+
+@media screen and (min-width: 1071px) {
+    #root_siderbar li.active {
+        border-left: 3px solid #e65c00;
+    }
+}
+
+
+
+
 @media screen and (max-width: 767px) {
     #root_siderbar {
         text-align: center;
@@ -7,10 +24,6 @@
     }
      #root_siderbar li a{
         width: 100%;
-    }
-    #root_siderbar li.active {
-        width: 100%;
-        border-bottom: 3px dotted #e65c00;
     }
 
 
@@ -25,9 +38,7 @@
         width: 100%;
     }
 
-    #root_siderbar li.active {
-        border-left: 3px solid #e65c00;
-    }
+    
     
 }
 

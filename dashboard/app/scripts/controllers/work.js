@@ -29,6 +29,7 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
             }
             $scope.isVisible = false;
             $scope.add_item = '';
+            $scope.editpage = false;
         };
 
         $scope.Cancel = function() {
