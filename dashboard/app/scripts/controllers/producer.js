@@ -1,5 +1,5 @@
-app.controller("producerCtrl", ['$scope',
-    function($scopeation, authService) {
+// app.controller("producerCtrl", ['$scope',
+//     function($scopeation, authService) {
     
-    }
-]);
+//     }
+// ]);

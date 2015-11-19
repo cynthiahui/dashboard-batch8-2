@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['google-maps','ui.router', 'ngCookies', 'ngAnimate', 'ui.bootstrap'])
+var app = angular.module('myApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ui.bootstrap'])
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider

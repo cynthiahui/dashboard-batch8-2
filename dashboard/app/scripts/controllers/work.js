@@ -8,7 +8,7 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
         }, function errorCallback(error) {});
 
 
-        $scope.isvisible = false;
+        $scope.isVisible = false;
         $scope.editpage = false;
 
         $scope.add_item_btn = function() {
@@ -40,7 +40,7 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
         };
 
         $scope.editImage = function(image) {
-            $scope.isvisible = false;
+            $scope.isVisible = false;
             $scope.editpage = true;
             temp_item = image;
             $scope.add_item = {
