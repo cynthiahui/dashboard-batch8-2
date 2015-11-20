@@ -29,8 +29,6 @@ app.directive("myWidget", function(){
 	return {
 		restrict: "E",
 
-		scope: {},
-
 		template: html,
 	};
 });
