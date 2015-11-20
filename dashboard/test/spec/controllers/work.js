@@ -74,7 +74,18 @@ describe('saving a document', function() {
     });
     
     it('when calling order by function',function(){
-            
+       
+        beforeEach(inject(function($httpBackend, $rootScope, $controller, $filter){
+            var orderBy = $filter('orderBy');
+            scope = $rootScope.$new();
+            ctrl = $controller('ImageController', {$scope: scope});
+        }));
+
+        var array = [2,1,3];
+        it('should do something', function(){
+            scope.array = orderBy(scope.array, predicate, reverse)
+            expect(scope.array).toEqual([1, 2, 3]);
+        });
     });
 
 });
