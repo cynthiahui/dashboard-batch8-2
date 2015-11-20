@@ -29,7 +29,7 @@ describe('Root Controller:', function(){
 					expect(AuthService.RemoveCookie).toHaveBeenCalled();
 				});
 			});
-
+ 
 			
 
 			describe('and then redirect to the login page', function(){
