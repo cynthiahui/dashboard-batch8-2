@@ -1,4 +1,4 @@
-html, body, div.map_container {
+div.map_container {
     height: 100%;
     width: 100%;
     margin: 0px;
@@ -10,9 +10,19 @@ div.map_container {
     position: relative;
     float: left;
     width: 70%;
-    height: 80%
+    height: 400px;
 }
 
+@media screen and (max-width: 500px) {
+    div.map_container {
+        position: relative;
+        float: left;
+        width: 60%;
+        height: 300px;
+    }
+
+    
+}
 .angular-google-map-container {
     position: absolute;
     top: 0;

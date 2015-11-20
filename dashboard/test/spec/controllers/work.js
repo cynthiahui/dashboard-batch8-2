@@ -11,68 +11,52 @@ describe('saving a document', function() {
         });
     }));
 
+    //initial boolean value
     it('should have an initial isvisible boolean value',function(){
-        expect(scope.isVisible).toEqual(false);
-        expect(scope.editpage).toEqual(false);
+        expect(scope.addVisable).toEqual(false);
+        expect(scope.editVisable).toEqual(false);
         expect(scope.isdeleteVisible).toEqual(false);
     });
 
-
-    describe('when calling the add_item_btn function', function() {      
-        beforeEach(function() {        
-            scope.add_item_btn();      
-        });      
-        it('should be set to true again', function() {        
-            expect(scope.isVisible).toEqual(true);      
+    //add toggle add function
+    describe('when calling the toggle add function', function() {           
+        it('should be set to true again', function() {          
+            scope.toggleAdd();  
+            expect(scope.addVisable).toEqual(true);  
         });        
     }); 
 
+    // //edit toogle edit function
     // describe('when calling submit function', function(){
-    //      expect(scope.isVisible).to.equal(false);
-    //      expect(scope.editpage).to.equal(false);
-
-    //      describe('justify whether it is visible or not', function(){
-    //         var temp_item;
-    //         beforeEach(function(){
-    //             temp_item.title = $scope.add_item.title;
-    //             temp_item.author = $scope.add_item.author;
-    //             temp_item.like = $scope.add_item.like;
-    //             temp_item.comment = $scope.add_item.comment;
-    //         });
-
-    //     it('should make some coffee', inject(function(coffeeMaker) {      
-    //         expect(coffeeMaker.brew()).to.equal('Le café.');    
-    //     })); 
+        
+    //      it('justify whether it is visible or not', function(){
+            
+    //         scope.toggleEdit();
+    //         expect(scope.editVisable).toEqual(true); 
+          
 
     //     });
     // });
 
-    it('when calling cancel function', function(){
-            expect(scope.isVisible).toEqual(false);
-            expect(scope.editpage).toEqual(false);
-    });
-
-
-    it('when calling eidt image function', function(){
-            expect(scope.isVisible).toEqual(false);
-            expect(scope.editpage).toEqual(false);
-    });
-
+    //test remove image function
     it('when calling remove image function',function(){
-            scope.isdeleteVisible = !scope.isdeleteVisible;
+            scope.removeImage();
             expect(scope.isdeleteVisible).toEqual(true);
     });
 
-    it('when calling submit delete function',function(){
-            scope.isdeleteVisible = !scope.isdeleteVisible;
-            expect(scope.isdeleteVisible).toEqual(true);
-    });
+    // //test submit delete function
+    // it('when calling submit delete function',function(){
+    //         scope.Submit_delete();
+    //         expect(scope.isdeleteVisible).toEqual(true);
+    // });
 
+    //test cancel delete function
     it('when calling cancel delete function',function(){
-            scope.isdeleteVisible = !scope.isdeleteVisible;
+            scope.Cancel_delete();
             expect(scope.isdeleteVisible).toEqual(true);
     });
     
+    //test orderBy function
     it('when calling order by function',function(){
        
         beforeEach(inject(function($httpBackend, $rootScope, $controller, $filter){

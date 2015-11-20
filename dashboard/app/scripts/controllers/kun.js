@@ -65,8 +65,8 @@ app.factory('MarkerCreatorService', function () {
 
 app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCreatorService, $scope) {
 
-        MarkerCreatorService.createByCoords(40.454018, -3.509205, function (marker) {
-            marker.options.labelContent = 'Autentia';
+        MarkerCreatorService.createByCoords(40.2992017, -74.6077627, function (marker) {
+            marker.options.labelContent = 'Princeton Junction';
             $scope.autentiaMarker = marker;
         });
         
