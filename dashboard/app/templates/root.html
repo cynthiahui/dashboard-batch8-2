@@ -5,7 +5,6 @@
             </button>
             <span id="logo"><img src="../assets/images/src/app/logo.png"></span>
         </div>
-        
         <div class="collapse navbar-collapse" id="menu-collapse">
             <ul class="nav navbar-nav navbar-left">
                 <li id="userinfo">{{user}} {{date | date:'MMM dd, y'}}</li>
@@ -17,14 +16,20 @@
             </ul>
         </div>
     </div>
-
     <div>
         <div id="root_siderbar">
             <ul>
-                <li ui-sref-active="active"><a ui-sref="root.overview"><span class="glyphicon glyphicon-cloud"></span><span>Overview</span></a></li>
-                <li ui-sref-active="active"><a ui-sref="root.work"><span class="glyphicon glyphicon-tags"></span><span>Work</span></a></li>
-                <li ui-sref-active="active"><a ui-sref="root.producer"><span class="glyphicon glyphicon-tint"></span><span>Producer</span></a></li>
-                <li ui-sref-active="active"><a ui-sref="root.contact"><span class="glyphicon glyphicon-th-large"></span><span>Contact</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="root.overview" ng-click="producerActive=false"><span class="glyphicon glyphicon-cloud"></span><span>Overview</span></a></li>
+                <li ui-sref-active="active"><a ui-sref="root.work" ng-click="producerActive=false"><span class="glyphicon glyphicon-tags"></span><span>Work</span></a></li>
+                <li class="root_dropdown" ng-class="{'active': producerActive}">
+                    <a ui-sref="root.producer"><span class="glyphicon glyphicon-tint"></span><span>Producer</span></a>
+                    <ul class="root_sub_menu">
+                        <li ui-sref-active="active"><a ui-sref="root.video" ng-click="producerActive=true"><span class="glyphicon glyphicon-cloud" ></span><span>Video</span></a></li>
+                        <li ui-sref-active="active"><a ui-sref="root.kun" ng-click="producerActive=true"><span class="glyphicon glyphicon-tags"></span><span>kun</span></a></li>
+                        <li ui-sref-active="active"><a ui-sref="root.cj" ng-click="producerActive=true"><span class="glyphicon glyphicon-tags"></span><span>cj</span></a></li>
+                    </ul>
+                </li>
+                <li ui-sref-active="active"><a ui-sref="root.contact" ng-click="producerActive=false"><span class="glyphicon glyphicon-th-large"></span><span>Contact</span></a></li>
             </ul>
         </div>
         <div id="root_content">
