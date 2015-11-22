@@ -3,26 +3,31 @@ div.map_container {
     width: 100%;
     margin: 0px;
     font-family: comic Sans MS, verdana, sans-serif;
+    font-size:15px;
     background: #fafafa;
 }
 
 div.map_container {
     position: relative;
     float: left;
-    width: 70%;
+    width: 50%;
     height: 400px;
 }
 
-@media screen and (max-width: 500px) {
+/*@media screen and (max-width: 500px) {
     div.map_container {
         position: relative;
         float: left;
-        width: 60%;
-        height: 300px;
+        width: 300px;
+        height: 400px;
+    }
+    div.controls {
+        float: left;
+        width: 100%;
     }
 
     
-}
+}*/
 .angular-google-map-container {
     position: absolute;
     top: 0;
@@ -32,8 +37,8 @@ div.map_container {
 }
 
 div.controls {
-    float: right;
-    width: 30%;
+    float: left;
+    width: 50%;
 }
 
 .markerlabel {
@@ -46,10 +51,14 @@ div.controls {
 }
 
 h3 {
-    margin: 0 20px;
+    margin: 0 10px;
 }
 
 p {    
     margin-top: 20px;
-    padding: 0 0 50px 20px;
+    padding: 0 0 10px 10px;
+}
+
+#input_city_name{
+    width:300px;
 }

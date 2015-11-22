@@ -1,7 +1,16 @@
-<!DOCTYPE html>
+
+    <h2>Weather Forecast</h2>
+    <form action="http://api.worldweatheronline.com/free/v2/weather.ashx" method="get">
+        <input type="input" name="q" placeholder="input city name. i.e: Seattle" id="input_city_name">
+        <input type="hidden" name="key" value="65a3ab02df9148348f2c1b225ca2d">
+        <input type="hidden" name="format" value="json">
+        <input type="submit" value="Get Weather">
+    </form>
+    <div id="forecast"></div>
+
 
     <div ng-controller="MapCtrl">
-        <h1>GOOGLE MAPS</h1>
+        <h2>Google Map</h2>
         <div class="map_container" >
             <google-map center="map.center" zoom="map.zoom" draggable="true" options="map.options" control="map.control">
                 <markers models="map.markers" coords="'self'" options="'options'" isLabel='true'>
@@ -9,14 +18,14 @@
             </google-map>
         </div>  
         <div class="controls">
-            <h3>Current location</h3>
+            <h3>Your Location</h3>
             <p>
-                <button ng-click="addCurrentLocation()">Current location</button>                
+                <button ng-click="addCurrentLocation()">Current Location</button>                
             </p>
-            <h3>Address search</h3>
+            <h3>Address Search</h3>
             <p>
-                <input type="text" placeholder="Address. i.e: Concha Espina 1, Madrid" ng-model="address" style="width: 210px"/>
-                <button ng-click="addAddress()">Look up!</button>    
+                <input type="text" placeholder="Address. i.e: Boston" ng-model="address" style="width: 190px"/>
+                <button ng-click="addAddress()">Look Up</button>    
             </p>
             <p>
                 <a href="http://kcy.me/1bbra" target="_blank">Source Code</a>

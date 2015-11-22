@@ -108,6 +108,29 @@ app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCre
         function refresh(marker) {
             $scope.map.control.refresh({latitude: marker.latitude,
                 longitude: marker.longitude});
-        }
+        };
+
+
+
+        $(document).ready(function(){
+            $("form").submit(function(){
+                $.get($(this).attr("action") + "?callback=?",
+                      $(this).serialize(),
+                      function(dojo){
+                        console.log(dojo)
+                        var temp_f = dojo.data.current_condition[0].temp_F,
+                            temp_c = dojo.data.current_condition[0].temp_C,
+                            windSpeed = dojo.data.current_condition[0].windspeedMiles,
+                            weather = dojo.data.current_condition[0].weatherDesc[0].value;
+
+                        $("#forecast").html("<div>The current temperature F: " + temp_f +
+                                             "</div><div>The current temperature C: " + temp_c +
+                                             "</div><div>The current windspeed: " + windSpeed + 
+                                             "mph</div><div>Weather Description: " + weather + "</div>");
+                      }, "json");
+
+                return false;
+            });
+        });
 
     }]);
