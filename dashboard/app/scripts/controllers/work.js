@@ -18,13 +18,18 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
         $scope.toggleEdit = function(image) {
             $scope.editVisable = true;
             $scope.temp_item = image;
-            $scope.edit_item =  {
-                    title: image.title,
-                    author: image.author,
-                    like: image.like,
-                    comment: image.comment
-                };
+            $scope.edit_item = {
+                title: image.title,
+                author: image.author,
+                like: image.like,
+                comment: image.comment
+            };
         };
+
+        $scope.myDropDown = 'card';
+        $scope.togglePage = function(choice) {
+            $scope.myDropDown = choice;
+        }
 
         $scope.isdeleteVisible = false;
 
@@ -48,7 +53,7 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
         };
 
 
-        $scope.myDropDown = 'list';
+
 
         var orderBy = $filter('orderBy');
         $scope.order = function(predicate, reverse) {

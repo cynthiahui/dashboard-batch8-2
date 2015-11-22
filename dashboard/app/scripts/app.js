@@ -1,4 +1,4 @@
-var app = angular.module('myApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ui.bootstrap'])
+var app = angular.module('myApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ui.bootstrap', 'angularMoment'])
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
@@ -22,26 +22,21 @@ var app = angular.module('myApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ui.bo
             templateUrl: '../templates/work.html'
         })
 
-        .state('root.producer', {
-            url: '/producer',
-            templateUrl: '../templates/producer.html'
-        })
-
         .state('root.contact', {
-            url: '/contact',
-            templateUrl: '../templates/contact.html'
-        })
-        .state('root.producer.cynthia', {
-            url: '/cynthia',
-            templateUrl: '../templates/cynthia.html'
-        })
+                url: '/contact',
+                templateUrl: '../templates/contact.html'
+            })
+            .state('root.video', {
+                url: '/video',
+                templateUrl: '../templates/video.html'
+            })
 
-        .state('root.producer.kun', {
+        .state('root.kun', {
             url: '/kun',
             templateUrl: '../templates/kun.html'
         })
 
-        .state('root.producer.cj', {
+        .state('root.cj', {
             url: '/cj',
             templateUrl: '../templates/cj.html'
         });

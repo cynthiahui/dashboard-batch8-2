@@ -4,6 +4,8 @@ app.controller("logoutCtrl", ['$scope', '$location', 'AuthService',
             $location.path('/');
         $scope.date = new Date();
 
+        $scope.producerActive = false;
+
         var updateDate = function() {
             $scope.date = new Date();
         };

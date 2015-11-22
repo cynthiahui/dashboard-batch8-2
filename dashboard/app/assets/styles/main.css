@@ -1,8 +1,29 @@
+@media screen and (max-width: 1070px) {
+    #root_content {
+        float: none;
+        width: 100%;
+    }
+    #root_siderbar {
+        float: none;
+        width: 100%;
+        text-align: center;
+    }
+    #root_siderbar ul {
+        padding-left: 0px;
+    }
 
+     #root_siderbar li.active {
+        width: 100%;
+        border-bottom: 3px dotted #DB5945;
+        border-left-style:none;
+    }
+
+    
+}
 
 #root_header {
     font-size: 1.4em;
-    background-color: #F5F5F5;
+    background-color: #F7F7F6;
     padding: 10px;
 }
 
