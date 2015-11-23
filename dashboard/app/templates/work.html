@@ -1,28 +1,26 @@
-<div id="work_page" ng-controller='ImageController'>
+<div id="work_page" ng-controller='ImageController' style="margin-top: 10px; margin-right: 10px; ">
     <div id="work_title" class="row">
-        <div id="btn_group" class="col-xs-12 col-md-12 col-lg-4">
-            <select ng-model="myDropDown" class="btn btn-info" id="work_drop_down" style="height:36px;font-size:1em;padding:2px 12px;margin-left:3px;">
-                <option value="list">
-                    Select design
-                </option>
-                <option value="list">
-                    list
-                </option>
-                <option value="card">
-                    card
-                </option>
-            </select>
+        <div id="btn_group" class="col-xs-12 col-md-12 col-lg-5">
+            <div class="btn-group" uib-dropdown is-open="status.isopen">
+                <button id="work_drop_down" type="button" class="btn btn-info" uib-dropdown-toggle ng-disabled="disabled" style="height:36px;font-size:1em;padding:2px 12px">
+                    Select design <span class="caret"></span>
+                </button>
+                <ul class="uib-dropdown-menu" role="menu" aria-labelledby="single-button">
+                    <li role="menuitem"><a href="#" style="font-size:1.3em;" ng-click="togglePage('list')">list</a></li>
+                    <li role="menuitem"><a href="#" style="font-size:1.3em;" ng-click="togglePage('card')">card</a></li>
+                </ul>
+            </div>
             <button class="btn btn-danger" style="height:36px;font-size:1em;padding:2px 12px;" ng-click="toggleAdd()">Add Item</button>
-            <modal title="Add Item" visible="addVisable"></modal>
+            <item-dialog title="Add Item" visible="addVisable" item="editItem"></item-dialog>
         </div>
-        <div class="row col-xs-12 col-md-12 col-lg-8">
-            <div class="col-xs-12 col-md-3 col-lg-3">
+        <div class="row col-xs-12 col-md-12 col-lg-7 text-right">
+            <div class="col-xs-12 col-md-3 col-lg-3 " style="padding-right:0px;">
                 <input type="text" placeholder='Name' name="name" ng-model='filter_name' class="work-input"> </div>
-            <div class="col-xs-12 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-md-3 col-lg-3" style="padding-right:0px;">
                 <input type="text" placeholder='Author' name="author" ng-model='filter_author' class="work-input"> </div>
-            <div class="col-xs-12 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-md-3 col-lg-3" style="padding-right:0px;">
                 <input type="text" placeholder='Like' name="like" ng-model='filter_like' class="work-input"> </div>
-            <div class="col-xs-12 col-md-3 col-lg-3">
+            <div class="col-xs-12 col-md-3 col-lg-3" style="padding-right:0px;">
                 <input type="text" placeholder='Comment' name="comment" ng-model='filter_comment' class="work-input">
             </div>
         </div>
@@ -53,13 +51,13 @@
                     <td ng-bind='image.like'></td>
                     <td ng-bind='image.comment'></td>
                     <!-- <td ng-bind='image.image'></td> -->
-                    <td><a ng-click='toggleEdit(image)'>Edit</a></td>
-                    <td><a ng-click='removeImage($index)'>Delete</a></td>
+                    <td><a ng-click='toggleEdit(image)' class="work_pointer">Edit</a></td>
+                    <td><a ng-click='removeImage($index)' class="work_pointer">Delete</a></td>
                 </tr>
             </tbody>
         </table>
     </div>
-    <modal  title="Edit Item" visible="editVisable"></modal>
+    <item-dialog title="Edit Item" visible="editVisable" item="editItem"></item-dialog>
     <div ng-show="myDropDown=='card'" id="drop_down_card" class="row">
         <div class="col-xs-12 col-ms-4 col-md-4 col-lg-4" ng-repeat="image in display_images | filter: filter_name |filter: filter_author | filter: filter_like |filter: filter_comment |orderBy: 'id'">
             <div class=" thumbnail" style="border-style:none;margin-bottom:30px;text-align:left;">
@@ -71,8 +69,8 @@
                 </div>
                 <div ng-bind='image.like'></div>
                 <div ng-bind='image.comment'></div>
-                <div style="color:blue; float:right;">
-                    <a ng-click='editImage(image)'>Edit |</a>
+                <div class="work_link">
+                    <a ng-click='toggleEdit(image)'>Edit |</a>
                     <a ng-click='removeImage($index)'>Delete</a>
                 </div>
             </div>

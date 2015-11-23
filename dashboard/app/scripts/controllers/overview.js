@@ -10,7 +10,7 @@ app.controller("OverviewCtrl", ['$scope', '$rootScope', '$http',
                     $scope.profile = profile;
                 }
             });
-            $scope.display_images = success.data.works;
+            // $scope.display_images = success.data.works;
         }, function errorCallback(error) {});
 
     }

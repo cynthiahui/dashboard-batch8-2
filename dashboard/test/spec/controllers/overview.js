@@ -18,9 +18,8 @@ describe('OverviewCtrl', function() {
         profileImage: 'assets/images/src/profile/minh.png'
     };
 
-    beforeEach(inject(function(_$controller_, _$rootScope_, _$httpBackend_, _$http_) {
-        $controller = _$controller_;
-        $http = _$http_;
+    beforeEach(inject(function(_$controller_, _$rootScope_, _$httpBackend_) {
+        // $http = _$http_;
         $httpBackend = _$httpBackend_;
         var $rootScope = _$rootScope_.$new();
         $scope = _$rootScope_.$new();
