@@ -200,3 +200,14 @@
     margin-right: 0;
     margin-left: 0;
 }
+
+.work_link {
+    color: blue;
+    float: right;
+}
+
+.work_link a:hover,
+.work_pointer:hover {
+    cursor: pointer;
+    text-decoration: none;
+}

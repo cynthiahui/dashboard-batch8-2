@@ -10,6 +10,8 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
 
         $scope.addVisable = false;
         $scope.editVisable = false;
+        $scope.tempItem = {};
+        $scope.editItem = {}
 
         $scope.toggleAdd = function() {
             $scope.addVisable = true;
@@ -17,8 +19,8 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
 
         $scope.toggleEdit = function(image) {
             $scope.editVisable = true;
-            $scope.temp_item = image;
-            $scope.edit_item = {
+            $scope.tempItem = image;
+            $scope.editItem = {
                 title: image.title,
                 author: image.author,
                 like: image.like,
