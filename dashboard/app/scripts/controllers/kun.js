@@ -89,7 +89,7 @@ app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCre
 
         $scope.addCurrentLocation = function () {
             MarkerCreatorService.createByCurrentLocation(function (marker) {
-                marker.options.labelContent = 'You´re here';
+                marker.options.labelContent = 'You are here';
                 $scope.map.markers.push(marker);
                 refresh(marker);
             });
