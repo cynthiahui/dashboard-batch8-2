@@ -8,42 +8,19 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
         }, function errorCallback(error) {});
 
 
-        $scope.isvisible = false;
-        $scope.editpage = false;
+        $scope.addVisable = false;
+        $scope.editVisable = false;
+        $scope.tempItem = {};
+        $scope.editItem = {}
 
-        $scope.add_item_btn = function() {
-
-            $scope.isVisible = true;
+        $scope.toggleAdd = function() {
+            $scope.addVisable = true;
         };
 
-        var temp_item;
-
-        $scope.Submit = function() {
-            if (!$scope.isVisible) {
-                temp_item.title = $scope.add_item.title;
-                temp_item.author = $scope.add_item.author;
-                temp_item.like = $scope.add_item.like;
-                temp_item.comment = $scope.add_item.comment;
-            } else {
-                $scope.display_images.push($scope.add_item);
-            }
-            $scope.isVisible = false;
-            $scope.add_item = '';
-            $scope.editpage = false;
-        };
-
-        $scope.Cancel = function() {
-
-            $scope.isVisible = false;
-            $scope.add_item = '';
-            $scope.editpage = false;
-        };
-
-        $scope.editImage = function(image) {
-            $scope.isvisible = false;
-            $scope.editpage = true;
-            temp_item = image;
-            $scope.add_item = {
+        $scope.toggleEdit = function(image) {
+            $scope.editVisable = true;
+            $scope.tempItem = image;
+            $scope.editItem = {
                 title: image.title,
                 author: image.author,
                 like: image.like,
@@ -51,35 +28,39 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
             };
         };
 
+        $scope.myDropDown = 'card';
+        $scope.togglePage = function(choice) {
+            $scope.myDropDown = choice;
+        }
 
         $scope.isdeleteVisible = false;
 
-	  	var index; 
- 		$scope.removeImage = function($index){
- 				index = $index;
-				console.log($index);
-				$scope.isdeleteVisible = !$scope.isdeleteVisible;
-		   
-	     };
+        var index;
+        $scope.removeImage = function($index) {
+            index = $index;
+            console.log($index);
+            $scope.isdeleteVisible = !$scope.isdeleteVisible;
 
-	    $scope.Submit_delete = function(){
-		     	console.log(index);
-			  	$scope.display_images.splice(index, 1);
-			  	$scope.isdeleteVisible = !$scope.isdeleteVisible;
- 	  		};
+        };
 
-		$scope.Cancel_delete = function () {
+        $scope.Submit_delete = function() {
+            console.log(index);
+            $scope.display_images.splice(index, 1);
+            $scope.isdeleteVisible = !$scope.isdeleteVisible;
+        };
 
-			$scope.isdeleteVisible = !$scope.isdeleteVisible;
-		};
+        $scope.Cancel_delete = function() {
+
+            $scope.isdeleteVisible = !$scope.isdeleteVisible;
+        };
 
 
-	    $scope.myDropDown = 'list';
 
-	    var orderBy = $filter('orderBy');
-		$scope.order = function(predicate, reverse) {
-	      $scope.display_images = orderBy($scope.display_images, predicate, reverse);
-	    };
+
+        var orderBy = $filter('orderBy');
+        $scope.order = function(predicate, reverse) {
+            $scope.display_images = orderBy($scope.display_images, predicate, reverse);
+        };
     }
 
 ]);

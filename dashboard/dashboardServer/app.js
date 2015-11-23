@@ -1,17 +1,19 @@
-var express      = require('express');
-var path         = require('path');
-var favicon      = require('serve-favicon');
-var logger       = require('morgan');
+var express = require('express');
+var path = require('path');
+var favicon = require('serve-favicon');
+var logger = require('morgan');
 var cookieParser = require('cookie-parser');
-var bodyParser   = require('body-parser');
-var routes       = require('./routes/index');
-var users        = require('./routes/users');
-var login        = require('./routes/login');
-var work         = require('./routes/work');
-var location     = require('./routes/location');
-var category     = require('./routes/category');
-var profile      = require('./routes/profile');
-var app          = express();
+var bodyParser = require('body-parser');
+var routes = require('./routes/index');
+var users = require('./routes/users');
+var login = require('./routes/login');
+var work = require('./routes/work');
+var location = require('./routes/location');
+var category = require('./routes/category');
+var profile = require('./routes/profile');
+var video = require('./routes/video');
+var comment = require('./routes/comment');
+var app = express();
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'jade');
@@ -31,6 +33,8 @@ app.use('/api/work', work);
 app.use('/api/location', location);
 app.use('/api/category', category);
 app.use('/api/profile', profile);
+app.use('/api/video', video);
+app.use('/api/comment', comment);
 console.log('Dashboard server started....');
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
