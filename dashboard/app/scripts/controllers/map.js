@@ -109,7 +109,6 @@ app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCre
         };
 
 
-
         $(document).ready(function(){
             $("form").submit(function(){
                 $.get($(this).attr("action") + "?callback=?",

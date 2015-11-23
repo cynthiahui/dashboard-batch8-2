@@ -27,10 +27,10 @@ var app = angular.module('myApp', ['google-maps' , 'ui.router', 'ngCookies', 'ng
                 url: '/contact',
                 templateUrl: '../templates/contact.html'
             })
-            .state('root.video', {
-                url: '/video',
-                templateUrl: '../templates/video.html'
-            })
+        .state('root.video', {
+            url: '/video',
+            templateUrl: '../templates/video.html'
+        })
 
         .state('root.map', {
             url: '/map',
