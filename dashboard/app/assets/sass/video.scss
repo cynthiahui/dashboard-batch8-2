@@ -18,16 +18,17 @@ $light-grey:#b8b894;
 
 .carousel-control.left,
 .carousel-control.right {
-    top: 0%;
+    top: -10%;
     background-image: none;
 }
 
-#myCarousel img:hover {
+.video-img:hover {
     cursor: pointer;
 }
+
 .c-textarea {
-	margin-top:30px;
-	margin-bottom:30px;
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .list-group-item {
@@ -46,3 +47,18 @@ $light-grey:#b8b894;
     font-size: 0.8em;
 }
 
+.play-button[playing="play"] {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 50px;
+    height: 34px;
+    background: url(../images/src/app/play_button.png);
+    opacity: 0.8;
+}
+
+.video-img:hover+div,
+.play-button:hover {
+    background: url(../images/src/app/play_button_hover.png);
+    cursor: pointer;
+}
