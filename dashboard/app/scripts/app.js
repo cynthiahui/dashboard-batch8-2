@@ -26,10 +26,11 @@ var app = angular.module('myApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ui.bo
                 url: '/contact',
                 templateUrl: '../templates/contact.html'
             })
-            .state('root.video', {
-                url: '/video',
-                templateUrl: '../templates/video.html'
-            })
+        
+        .state('root.video', {
+            url: '/video',
+            templateUrl: '../templates/video.html'
+        })
 
         .state('root.kun', {
             url: '/kun',
