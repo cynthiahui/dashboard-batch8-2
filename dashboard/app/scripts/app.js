@@ -1,4 +1,5 @@
-var app = angular.module('myApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ui.bootstrap', 'angularMoment'])
+var app = angular.module('myApp', ['google-maps' , 'ui.router', 'ngCookies', 'ngAnimate', 'ui.bootstrap'])
+
     .config(function($stateProvider, $urlRouterProvider) {
         $urlRouterProvider.otherwise('/');
         $stateProvider
@@ -26,14 +27,14 @@ var app = angular.module('myApp', ['ui.router', 'ngCookies', 'ngAnimate', 'ui.bo
                 url: '/contact',
                 templateUrl: '../templates/contact.html'
             })
-            .state('root.video', {
-                url: '/video',
-                templateUrl: '../templates/video.html'
-            })
+        .state('root.video', {
+            url: '/video',
+            templateUrl: '../templates/video.html'
+        })
 
-        .state('root.kun', {
-            url: '/kun',
-            templateUrl: '../templates/kun.html'
+        .state('root.map', {
+            url: '/map',
+            templateUrl: '../templates/map.html'
         })
 
         .state('root.cj', {

@@ -1,4 +1,4 @@
-describe('OverviewCtrl1', function() {
+describe('OverviewCtrl', function() {
     beforeEach(module('myApp'));
     var $httpBackend,$scope;
     var success = {

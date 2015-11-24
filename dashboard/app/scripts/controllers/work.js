@@ -7,7 +7,6 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
             $scope.display_images = success.data.works;
         }, function errorCallback(error) {});
 
-
         $scope.addVisable = false;
         $scope.editVisable = false;
         $scope.tempItem = {};
@@ -38,13 +37,12 @@ app.controller("ImageController", ['$scope', '$http', '$filter',
         var index;
         $scope.removeImage = function($index) {
             index = $index;
-            console.log($index);
+            // console.log($index);
             $scope.isdeleteVisible = !$scope.isdeleteVisible;
 
-        };
-
+};
         $scope.Submit_delete = function() {
-            console.log(index);
+            // console.log(index);
             $scope.display_images.splice(index, 1);
             $scope.isdeleteVisible = !$scope.isdeleteVisible;
         };
