@@ -134,7 +134,7 @@ app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCre
         var directionsService = new google.maps.DirectionsService();
         var map;
 
-        $(window).load(function() {
+        // $(window).load(function() {
             var myOptions = {
                 zoom: 10,
                 mapTypeId: google.maps.MapTypeId.ROADMAP,
@@ -148,7 +148,7 @@ app.controller('MapCtrl', ['MarkerCreatorService', '$scope', function (MarkerCre
             $("#routeGo").on("click", function() { calcRoute(); });
             $("#routeClear").on("click", function() { directionsDisplay.setDirections({ routes: [] }); });
             
-        });
+        // });
 
 
         function calcRoute() {
