@@ -28,7 +28,7 @@ gulp.task('imagemin', () => {
 
 //3)clean all the minify images in build
 gulp.task('clean', function() {
-    return del(['./app/assets/images/bulid']);
+    return del(['./app/assets/images/build']);
 });
 
 //4)lint error and warning in javascript code

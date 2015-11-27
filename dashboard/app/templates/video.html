@@ -8,7 +8,7 @@
     <div style="position:relative">
         <div class="carousel slide" id="myCarousel" data-interval="false">
             <div class="carousel-inner">
-                <div class="item" ng-class="$index==0?'active':''" ng-repeat="video in videos" on-finish-render="ngRepeatFinished">
+                <div class="item" ng-class="$index==0?'active':''" ng-repeat="video in videos">
                     <div class="col-xs-3" style="position:relative" ng-repeat="subVideo in video.video">
                         <img src="{{subVideo.source.imgSrc}}" class="img-responsive video-img" ng-click="changeVideo(subVideo.source,subVideo.id,plays[subVideo.id])">
                         <div class="play-button" playing="{{plays[subVideo.id]}}" ng-click="changeVideo(subVideo.source,subVideo.id,plays[subVideo.id])"></div>
